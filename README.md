@@ -1,4 +1,4 @@
-# Wake Up! -- Return-0 Interactive
+# Wake Up! -- Return 0; Interactive
 A COMP3770 Game Development Project from University of Windsor
 
 ## Game Design Document & SharePoint
