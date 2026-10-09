@@ -16,3 +16,6 @@ Difficulty: Each morning has either no anomaly or exactly one, and the chance ri
 Tension: There are no enemies or jump scares. The unease comes from not knowing whether something is wrong, and we’re aiming for an average survey rating of about 3.5/5.
 Time Pressure: A wall clock is the only timer, with no countdown on screen. Each morning lasts about 4 minutes, which is enough to look around but not enough to relax.
 Accessibility: A first-time player should be able to finish the tutorial day without any text instructions, using only W/A/S/D, the mouse, and E.
+
+## Project Scope
+The scope of Wake Up! will have to be limited, due to constraints of time and limited team members. The game will have about 5 morning tasks, 10-15 anomalies in a single map, and will include simple object interactions. It will be released for Windows PC as a single-player experience, and will not be ported to console platforms. Game assets will be created in-house mainly, but audio and some textures will be acquired from 3rd-party sources.
