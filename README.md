@@ -19,3 +19,35 @@ Accessibility: A first-time player should be able to finish the tutorial day wit
 
 ## Project Scope
 The scope of Wake Up! will have to be limited, due to constraints of time and limited team members. The game will have about 5 morning tasks, 10-15 anomalies in a single map, and will include simple object interactions. It will be released for Windows PC as a single-player experience, and will not be ported to console platforms. Game assets will be created in-house mainly, but audio and some textures will be acquired from 3rd-party sources.
+
+##In-and-Out Formalization
+
+### Inputs
+The game inputs were formalized as:
+`Inputs = (P, S, G)`
+- **P** – Player action
+- **S** – Current game state
+- **G** – Game parameters
+
+### Game State
+The game state was defined as:
+`S = (D, M, K, T, A)`
+Where:
+- **D** – Current day
+- **M** – Current map state
+- **K** – Tasks for the current day
+- **T** – Current timer value
+- **A** – Selected anomaly
+
+### Game Parameters
+The game parameters were defined as:
+`G = (D_max, PA, T_max, K_r)`
+These control the maximum number of days, anomaly probability, timer limit, and required number of tasks.
+
+### Outputs
+The outputs were formalized as:
+`Outputs = (S + 1, F, W, L)`
+- **S + 1** – Updated game state
+- **F** – Player feedback, such as visuals, sounds, task updates, and anomaly effects
+- **W** – Win condition
+- **L** – Lose condition
