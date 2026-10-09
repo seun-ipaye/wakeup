@@ -20,7 +20,7 @@ Accessibility: A first-time player should be able to finish the tutorial day wit
 ## Project Scope
 The scope of Wake Up! will have to be limited, due to constraints of time and limited team members. The game will have about 5 morning tasks, 10-15 anomalies in a single map, and will include simple object interactions. It will be released for Windows PC as a single-player experience, and will not be ported to console platforms. Game assets will be created in-house mainly, but audio and some textures will be acquired from 3rd-party sources.
 
-##In-and-Out Formalization
+## In-and-Out Formalization
 
 ### Inputs
 The game inputs were formalized as:
