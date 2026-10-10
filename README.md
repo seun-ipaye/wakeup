@@ -55,7 +55,7 @@ The outputs were formalized as:
 
 ## Architecture Sketch
 
-*Wake Up!* is a first-person psychological horror game focused on exploration, routine tasks, anomaly detection, and decision-making. Players complete morning tasks while observing their surroundings, then choose to return to bed or leave for work, determining whether they retry, progress, or lose.
+*Wake Up!* is focused on exploration, routine tasks, anomaly detection, and decision-making. The player will complete morning tasks while observing their surroundings, then choose to return to bed or leave for work, determining whether they retry, progress, or lose.
 
 The game uses WASD for movement, mouse look, and E to interact, with prompts indicating interactable objects. It uses a first-person camera and the player will likely have no visible body.
 
