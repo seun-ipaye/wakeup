@@ -1,8 +1,9 @@
 # Wake Up! -- Return 0; Interactive
 A COMP3770 Game Development Project from University of Windsor
 
-## Game Design Document & SharePoint
-(site link here)
+## Game Design Document & OneDrive
+[GDD File](https://uwin365-my.sharepoint.com/:b:/g/personal/mills13_uwindsor_ca/IQBPQyiqXNIVQK91eXKuMZVfAbzo4SdHsUs1tspvBc_TL0c?e=ntg1ds)
+[OneDrive](https://uwin365-my.sharepoint.com/:f:/g/personal/mills13_uwindsor_ca/IgDBU5G_4C5lRp5uh3JumCRyAbZS4w8HWI6jV_4sYccC8EA?e=IEMKDE)
 
 ## Vision
 Wake Up! is a 3D psychological horror game about completing a morning routine while identifying anomalies (strange occurrences) to determine whether the player is actually awake or still dreaming.
