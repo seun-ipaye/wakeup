@@ -62,4 +62,3 @@ The outputs were formalized as:
 The game uses WASD for movement, mouse look, and E to interact, with prompts indicating interactable objects. It uses a first-person camera and the player will likely have no visible body.
 
 The game will be developed in Unity using C#. Task and anomaly data may be stored in ScriptableObjects, configuration files, or C# scripts. Most visual assets will be created in-house, with some third-party assets. The Sound Production Lead will oversee audio consistency and atmosphere.
-
