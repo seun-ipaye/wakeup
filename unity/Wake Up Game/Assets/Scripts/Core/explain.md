@@ -1,0 +1,1 @@
+Day counter, repeat counter, go-to-bed / go-to-work decision, win after Day 5, lose and reset.

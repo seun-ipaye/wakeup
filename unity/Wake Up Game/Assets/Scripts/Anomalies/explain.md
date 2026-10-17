@@ -1,0 +1,1 @@
+Anomaly list and tiers, choosing whether a morning has one (50% Day 1 → 80% Day 5), applying it to the house.
