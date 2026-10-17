@@ -54,11 +54,18 @@ The outputs were formalized as:
 - **W** – Win condition
 - **L** – Lose condition
 
-
 ## Architecture Sketch
-
 *Wake Up!* is focused on exploration, routine tasks, anomaly detection, and decision-making. The player will complete morning tasks while observing their surroundings, then choose to return to bed or leave for work, determining whether they retry, progress, or lose.
 
 The game uses WASD for movement, mouse look, and E to interact, with prompts indicating interactable objects. It uses a first-person camera and the player will likely have no visible body.
 
 The game will be developed in Unity using C#. Task and anomaly data may be stored in ScriptableObjects, configuration files, or C# scripts. Most visual assets will be created in-house, with some third-party assets. The Sound Production Lead will oversee audio consistency and atmosphere.
+
+## How to Open This Project in Unity
+To open this project in Unity:
+
+1. Clone this repository to a local location on your computer, or use **Add from repository** in Unity Hub to clone it.
+2. If you cloned the repository manually, open Unity Hub and click **Add** > **Add project from disk**.
+3. Navigate to the cloned project folder and select it. Make sure you select the folder containing `Assets`, `Packages`, and `ProjectSettings`.
+4. Open the project in Unity Hub.
+
