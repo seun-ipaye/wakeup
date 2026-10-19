@@ -8,3 +8,6 @@
 *.csproj
 *.unityproj
 *.sln
+[Uu]ser[Ss]ettings/
+.vs/
+*.slnx
