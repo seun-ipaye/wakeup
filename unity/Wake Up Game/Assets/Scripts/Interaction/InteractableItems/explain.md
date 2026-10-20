@@ -1,0 +1,1 @@
+One script per thing you can press E on (LightSwitch, Door, Faucet, CarKeys, Bed, FrontDoor) etc etc
