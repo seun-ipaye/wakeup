@@ -456,6 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0025e6bf07f467b9999ba1f440580b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DayManager
+  hasAnomaly: 0
 --- !u!4 &509730311
 Transform:
   m_ObjectHideFlags: 0
@@ -4131,6 +4132,7 @@ GameObject:
   - component: {fileID: 3469287837019893355}
   - component: {fileID: 1711813856247388833}
   - component: {fileID: 145428516}
+  - component: {fileID: 3469287837019893356}
   m_Layer: 0
   m_Name: front door
   m_TagString: Untagged
@@ -6353,6 +6355,7 @@ GameObject:
   - component: {fileID: 8047316137908872260}
   - component: {fileID: 3475146298556352378}
   - component: {fileID: 899747145}
+  - component: {fileID: 8047316137908872261}
   m_Layer: 0
   m_Name: bed placeholder
   m_TagString: Untagged
@@ -7357,6 +7360,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148577352564}
   m_Mesh: {fileID: 2619086233303812490, guid: bf891111cb3c55549b0772b6157252a9, type: 3}
+--- !u!114 &3469287837019893356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148577352564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c84f6a917e642c287078a9ce680663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FrontDoor
 --- !u!33 &3470377399572567730
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12658,6 +12673,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2585757068520811514}
   m_Mesh: {fileID: -4612519707618042087, guid: 84c7f3d75348a074e80ca761df3ab82e, type: 3}
+--- !u!114 &8047316137908872261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585757068520811514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d06e320114db4643b4d255e12d47273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bed
 --- !u!4 &8079427524363454702
 Transform:
   m_ObjectHideFlags: 0
