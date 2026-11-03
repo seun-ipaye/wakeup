@@ -14,9 +14,8 @@ public class DayManager : MonoBehaviour
     public static int CurrentDay { get; private set; } = 1;
     public static int RepeatsUsed { get; private set; }
 
-    [Tooltip("Set by the anomaly system. Tick it by hand to test.")]
-    public bool hasAnomaly;
-
+        // set each morning by AnomalyManager
+    [HideInInspector] public bool hasAnomaly;
     // other scripts (UI, anomalies) can listen for these
     public static event Action<int> DayChanged;
     public static event Action Won;
