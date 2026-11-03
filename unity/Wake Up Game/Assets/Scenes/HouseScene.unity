@@ -1097,6 +1097,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5543852910939878438, guid: 84c7f3d75348a074e80ca761df3ab82e, type: 3}
+--- !u!4 &809849562 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4855650905982680833, guid: e9bed4d0994ff01459526659b3f18911, type: 3}
+  m_PrefabInstance: {fileID: 1452153643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &824109730
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2787,6 +2792,63 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1001 &1439871644
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3192097793500238944, guid: 33c41c9f7ef59c44f87905f213769b38, type: 3}
+      propertyPath: m_Name
+      value: bedroom door
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419077950025506178, guid: 33c41c9f7ef59c44f87905f213769b38, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.5063577
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419077950025506178, guid: 33c41c9f7ef59c44f87905f213769b38, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.0852182
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419077950025506178, guid: 33c41c9f7ef59c44f87905f213769b38, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.5108135
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419077950025506178, guid: 33c41c9f7ef59c44f87905f213769b38, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.70710635
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419077950025506178, guid: 33c41c9f7ef59c44f87905f213769b38, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419077950025506178, guid: 33c41c9f7ef59c44f87905f213769b38, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710725
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419077950025506178, guid: 33c41c9f7ef59c44f87905f213769b38, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419077950025506178, guid: 33c41c9f7ef59c44f87905f213769b38, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419077950025506178, guid: 33c41c9f7ef59c44f87905f213769b38, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419077950025506178, guid: 33c41c9f7ef59c44f87905f213769b38, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 33c41c9f7ef59c44f87905f213769b38, type: 3}
 --- !u!64 &1442076100
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2831,6 +2893,63 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1128709143991794955, guid: 84c7f3d75348a074e80ca761df3ab82e, type: 3}
+--- !u!1001 &1452153643
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 543450653080072944}
+    m_Modifications:
+    - target: {fileID: 4855650905982680833, guid: e9bed4d0994ff01459526659b3f18911, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.374191
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855650905982680833, guid: e9bed4d0994ff01459526659b3f18911, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.1908343
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855650905982680833, guid: e9bed4d0994ff01459526659b3f18911, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 20.567715
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855650905982680833, guid: e9bed4d0994ff01459526659b3f18911, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0000005066394
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855650905982680833, guid: e9bed4d0994ff01459526659b3f18911, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855650905982680833, guid: e9bed4d0994ff01459526659b3f18911, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855650905982680833, guid: e9bed4d0994ff01459526659b3f18911, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855650905982680833, guid: e9bed4d0994ff01459526659b3f18911, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855650905982680833, guid: e9bed4d0994ff01459526659b3f18911, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855650905982680833, guid: e9bed4d0994ff01459526659b3f18911, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056240930206297675, guid: e9bed4d0994ff01459526659b3f18911, type: 3}
+      propertyPath: m_Name
+      value: bathroom door
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e9bed4d0994ff01459526659b3f18911, type: 3}
 --- !u!23 &1457140791 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3232823545748059562, guid: b2071ed8d8c325349ae1557ee86377fc, type: 3}
@@ -4711,6 +4830,7 @@ Transform:
   - {fileID: 832821931}
   - {fileID: 943012855}
   - {fileID: 4381131852286633932}
+  - {fileID: 809849562}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653102989774
@@ -14653,3 +14773,4 @@ SceneRoots:
   - {fileID: 509730311}
   - {fileID: 779542603}
   - {fileID: 2132186026}
+  - {fileID: 1439871644}
