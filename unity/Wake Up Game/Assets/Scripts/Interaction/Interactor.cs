@@ -25,7 +25,7 @@ public class Interactor : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, interactDistance))
             current = hit.collider.GetComponentInParent<InteractableInterface>();
 
-        if (current != null && Keyboard.current.eKey.wasPressedThisFrame)
+        if (current != null && !SleepFader.Busy && Keyboard.current.eKey.wasPressedThisFrame)
             current.Interact();
 
         if (current != null)
@@ -34,7 +34,8 @@ public class Interactor : MonoBehaviour
             key.anchoredPosition = new Vector2(-label.preferredWidth / 2f - 6f, 0f);
         }
 
-        hover = Mathf.MoveTowards(hover, current != null ? 1f : 0f, 8f * Time.deltaTime);
+        bool show = current != null && !SleepFader.Busy;
+        hover = Mathf.MoveTowards(hover, show ? 1f : 0f, 8f * Time.deltaTime);
         ring.color = new Color(1f, 1f, 1f, hover);
         prompt.alpha = hover;
     }

@@ -14,6 +14,9 @@ public class DayManager : MonoBehaviour
     public static int CurrentDay { get; private set; } = 1;
     public static int RepeatsUsed { get; private set; }
 
+    // blocks repeat calls once a new morning is loading
+    static bool changing;
+
     [Tooltip("Set by the anomaly system. Tick it by hand to test.")]
     public bool hasAnomaly;
 
@@ -25,12 +28,15 @@ public class DayManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        changing = false;
     }
 
     // called by the front door
     [ContextMenu("Go To Work")]
     public void GoToWork()
     {
+        if (changing) return;
+
         if (hasAnomaly)
         {
             Lose("Went to work but something was wrong");
@@ -51,6 +57,8 @@ public class DayManager : MonoBehaviour
     [ContextMenu("Go To Bed")]
     public void GoToBed()
     {
+        if (changing) return;
+
         if (!hasAnomaly)
         {
             Lose("Went back to bed on a normal morning");
@@ -101,6 +109,7 @@ public class DayManager : MonoBehaviour
     // reload the house so every morning starts fresh
     void StartMorning()
     {
+        changing = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
