@@ -2550,6 +2550,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2659410629330480416, guid: e77449f683d90b84a9c41bf30096462e, type: 3}
   m_PrefabInstance: {fileID: 1074278556}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1079227225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1079227227}
+  - component: {fileID: 1079227226}
+  m_Layer: 0
+  m_Name: AnomalyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1079227226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079227225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935028280b8aa44de89f5303fdf971ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnomalyManager
+  mode: 0
+  firstDayChance: 0.5
+  lastDayChance: 0.8
+  lowestChance: 0.2
+  hasAnomaly: 0
+  tier: 0
+--- !u!4 &1079227227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079227225}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.08647, y: 6.77852, z: -20.93036}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1114877276 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 5124015287231518877, guid: b2071ed8d8c325349ae1557ee86377fc, type: 3}
@@ -17467,3 +17517,4 @@ SceneRoots:
   - {fileID: 779542603}
   - {fileID: 2132186026}
   - {fileID: 1420076862}
+  - {fileID: 1079227227}

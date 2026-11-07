@@ -8,7 +8,7 @@ public class DayManager : MonoBehaviour
     public static DayManager Instance { get; private set; }
 
     public const int MaxDays = 5;
-    public const int MaxRepeats = 2;
+    public const int MaxRepeats = 5;
 
     // static so these survive when the House scene reloads for a new morning
     public static int CurrentDay { get; private set; } = 1;

@@ -12,7 +12,7 @@ public class AnomalyManager : MonoBehaviour
     [Header("Chance")]
     [Range(0f, 1f)] public float firstDayChance = 0.5f;
     [Range(0f, 1f)] public float lastDayChance = 0.8f;
-    [Range(0f, 1f)] public float repeatPenalty = 0.1f;
+    [Range(0f, 1f)] public float lowestChance = 0.2f;
 
     public const int MaxTier = 3;
 
@@ -39,16 +39,16 @@ public class AnomalyManager : MonoBehaviour
         return Random.value < ChanceForToday();
     }
 
-    // 50% on day 1 rising evenly to 80% on day 5
-        // 50% on day 1 rising to 80% on day 5, lower after each repeat,
-    // and guaranteed normal once the repeats are used up
+    // 50% on day 1 rising to 80% on day 5, falling evenly to lowestChance
+    // by the last repeat roll, then guaranteed normal once repeats are used up
     float ChanceForToday()
     {
         if (DayManager.RepeatsUsed >= DayManager.MaxRepeats) return 0f;
 
         float progress = (DayManager.CurrentDay - 1) / (float)(DayManager.MaxDays - 1);
         float chance = Mathf.Lerp(firstDayChance, lastDayChance, progress);
-        return Mathf.Max(0f, chance - repeatPenalty * DayManager.RepeatsUsed);
+        float repeats = DayManager.RepeatsUsed / (float)(DayManager.MaxRepeats - 1);
+        return Mathf.Lerp(chance, lowestChance, repeats);
     }
 
     // tier 1 = obvious, 3 = subtle; later days unlock subtler tiers
