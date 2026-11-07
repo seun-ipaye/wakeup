@@ -8,7 +8,7 @@ public class DayManager : MonoBehaviour
     public static DayManager Instance { get; private set; }
 
     public const int MaxDays = 5;
-    public const int MaxRepeats = 2;
+    public const int MaxRepeats = 5;
 
     // static so these survive when the House scene reloads for a new morning
     public static int CurrentDay { get; private set; } = 1;
@@ -17,8 +17,8 @@ public class DayManager : MonoBehaviour
     // blocks repeat calls once a new morning is loading
     static bool changing;
 
-    [Tooltip("Set by the anomaly system. Tick it by hand to test.")]
-    public bool hasAnomaly;
+    // set each morning by AnomalyManager
+    [HideInInspector] public bool hasAnomaly;
 
     // other scripts (UI, anomalies) can listen for these
     public static event Action<int> DayChanged;
