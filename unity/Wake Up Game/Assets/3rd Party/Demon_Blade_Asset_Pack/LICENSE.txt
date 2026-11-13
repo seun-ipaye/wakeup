@@ -1,0 +1,34 @@
+DEMON BLADE LOW POLY - END USER LICENSE AGREEMENT (EULA)
+(Non-Exclusive Commercial & Personal License with Mandatory Attribution)
+
+
+Thank you for downloading/purchasing this asset pack!
+
+TERMS OF USE & PERMISSIONS:
+
+1. PERSONAL & COMMERCIAL USE:
+- You ARE allowed to use this asset pack in both non-commercial and commercial projects (such as video games, interactive media, animations, or renders).
+- You ARE allowed to monetize your projects (e.g., selling your game, earning ad revenue, or receiving donations) using these assets without paying royalties.
+
+2. MODIFICATIONS & ADAPTATIONS:
+- You ARE allowed to modify, edit, or adapt the models, meshes, rig, and textures (e.g., changing colors, altering meshes, adjusting proportions, or adding parts) strictly for use WITHIN your own projects.
+- Bug fixes or mesh adjustments needed for technical integration into your project are fully permitted.
+
+3. ATTRIBUTION (CREDIT REQUIRED):
+- Credit IS MANDATORY for all projects using this asset pack.
+- You must include credit to the creator in your game's credits, documentation, or store page.
+- Example credit: "Demon blade Low Poly Model by ItsMudtip".
+
+RESTRICTIONS & PROHIBITIONS:
+
+1. NO RESELLING OR REDISTRIBUTION:
+- You ARE NOT allowed to re-sell, sub-license, share, or redistribute the original 3D models, textures, or source files (.blend, .fbx, .png) as standalone assets.
+- You ARE NOT allowed to re-sell or redistribute ANY modified or recolored version of these models/textures as asset packs, 3D stock, or standalone resources on any storefront (Itch.io, Unity Asset Store, Unreal Marketplace, CGTrader, Sketchfab, etc.).
+
+2. NO AI / NFT USE:
+- You ARE NOT allowed to use these assets for NFT creation or machine learning / AI model training datasets.
+
+---
+By downloading or using this asset, you agree to these terms.
+Author/Creator: ItsMudtip
+Contact/Socials: https://itsmudtip.itch.io/   -   https://x.com/ItsMudtip

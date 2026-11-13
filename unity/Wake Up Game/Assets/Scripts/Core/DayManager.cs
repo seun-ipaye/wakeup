@@ -88,6 +88,9 @@ public class DayManager : MonoBehaviour
     {
         CurrentDay = 1;
         RepeatsUsed = 0;
+
+        AnomalyManager.Instance.ResetUsedAnomalies();
+
         Debug.Log("Week reset to Day 1");
         DayChanged?.Invoke(CurrentDay);
     }

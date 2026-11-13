@@ -3,6 +3,8 @@ using UnityEngine;
 // Decides each morning whether there is an anomaly and how subtle it is
 public class AnomalyManager : MonoBehaviour
 {
+    public static AnomalyManager Instance { get; private set; }
+
     public enum Mode { Random, ForceNormal, ForceAnomaly }
 
     [Header("Testing")]
@@ -20,10 +22,26 @@ public class AnomalyManager : MonoBehaviour
     public bool hasAnomaly;
     public int tier;
 
+    [Header("Available Anomalies")]
+    public Anomaly[] anomalies;
+    public Anomaly selectedAnomaly;
+
+    //anomalies already used this week
+    private static System.Collections.Generic.List<Anomaly> usedAnomalies = new System.Collections.Generic.List<Anomaly>();
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         hasAnomaly = RollAnomaly();
         tier = hasAnomaly ? PickTier() : 0;
+
+        if (hasAnomaly){
+            SelectAnomaly();
+        }
 
         DayManager.Instance.hasAnomaly = hasAnomaly;
 
@@ -57,4 +75,43 @@ public class AnomalyManager : MonoBehaviour
         int highest = Mathf.Clamp(Mathf.CeilToInt(DayManager.CurrentDay / 2f), 1, MaxTier);
         return Random.Range(1, highest + 1);
     }
+
+    //select anomaly from the chosen tier
+    void SelectAnomaly()
+    {
+        //store anomalies that match day's tier
+        System.Collections.Generic.List<Anomaly> available = new System.Collections.Generic.List<Anomaly>();
+
+        foreach (Anomaly anomaly in anomalies){
+            if (anomaly != null && anomaly.tier == tier && !usedAnomalies.Contains(anomaly)){
+                available.Add(anomaly);
+            }
+        }
+
+        //make sure there at least 1 available anomaly
+        if (available.Count == 0){
+            Debug.LogWarning("No anomalies for tier " + tier);
+            return;
+        }
+
+        //randomly pick anomaly
+        selectedAnomaly = available[Random.Range(0, available.Count)];
+
+        //mark anomaly as used this week
+        usedAnomalies.Add(selectedAnomaly);
+
+        //activate selected anomaly
+        selectedAnomaly.Activate();
+
+        Debug.Log("Selected anomaly: " + selectedAnomaly.anomalyName);
+    }
+
+    //resetanomaly history when new week starts
+    public void ResetUsedAnomalies()
+    {
+        usedAnomalies.Clear();
+
+        Debug.Log("Anomaly history reset for the new week");
+    }
+
 }
