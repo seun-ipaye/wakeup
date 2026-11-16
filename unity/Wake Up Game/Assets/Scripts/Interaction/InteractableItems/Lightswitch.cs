@@ -39,15 +39,24 @@ public class LightSwitch : MonoBehaviour, InteractableInterface
         foreach (var lamp in glowingLamp)
         {
             if (lamp == null) continue;
+
+            foreach (var material in lamp.materials)
+            {
+                if (material == null || !material.HasProperty("_EmissionColor"))
+                    continue;
+
+                if (material.GetColor("_EmissionColor").maxColorComponent <= 0f)
+                    continue;
+
                 if (on)
-            {
-                lamp.material.EnableKeyword("_EMISSION");
-            }
-            else
-            {
-                lamp.material.DisableKeyword("_EMISSION");
+                {
+                    material.EnableKeyword("_EMISSION");
+                }
+                else
+                {
+                    material.DisableKeyword("_EMISSION");
+                }
             }
         }
-
     }
 }
