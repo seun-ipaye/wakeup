@@ -13,7 +13,15 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private GameObject ObjectivesList;
     [SerializeField] private TextMeshProUGUI DayText;
-    
+
+    //clock UI
+    [Header("Clock UI")]
+    [SerializeField] private GameObject ClockPanel;
+    [SerializeField] private TextMeshProUGUI ClockTimeText;
+    [SerializeField] private CanvasGroup ClockCanvasGroup;
+    [SerializeField] private float fadeSpeed = 6f;
+
+    private bool showClock = false;
 
     [Header("UI Visual Components")]
     [SerializeField] TextMeshProUGUI GetDressedTaskText;
@@ -23,7 +31,9 @@ public class HUDManager : MonoBehaviour
 
     private void Awake() {
         //GetDressedComplete.text = taskManager.
+        Instance = this;
 
+        ClockPanel.SetActive(false);
     }
 
 
@@ -44,6 +54,9 @@ public class HUDManager : MonoBehaviour
 
         //Updating objectives
         UpdateUI();
+
+        //update the clock display
+        UpdateClockUI();
     }
     void UpdateUI() { 
         if (taskManager.isGetDressedComplete) {   //Dressed objective complete
@@ -64,6 +77,44 @@ public class HUDManager : MonoBehaviour
         }
 
     }
+
+
+    //show the clock UI when player looks at a clock object
+    public void ShowClock()
+    {
+        showClock = true;
+    }
+
+    //hide clock UI when player looks away from clock object
+    public void HideClock()
+    {
+        showClock = false;
+    }
+
+    //update the time that is displayed on the clock UI
+    void UpdateClockUI()
+    {
+        if (ClockPanel.activeSelf && GameClock.Instance != null)
+        {
+            ClockTimeText.text = GameClock.Instance.GetFormattedTime();
+        }
+
+        UpdateClockFade();
+    }
+
+    //fade the clock UI in and out when the player looks at a clock object
+    void UpdateClockFade()
+    {
+        float targetAlpha = showClock ? 1f : 0f;
+
+        ClockCanvasGroup.alpha = Mathf.MoveTowards(ClockCanvasGroup.alpha, targetAlpha, fadeSpeed * Time.deltaTime);
+
+        ClockCanvasGroup.interactable = showClock;
+        ClockCanvasGroup.blocksRaycasts = showClock;
+
+        ClockPanel.SetActive(ClockCanvasGroup.alpha > 0f);
+    }
+
     void DisableDressed()
     {
         GetDressedTaskText.gameObject.SetActive(false);
