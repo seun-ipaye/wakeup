@@ -3369,10 +3369,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615615439}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
 --- !u!1 &628053538
 GameObject:
   m_ObjectHideFlags: 0
@@ -3448,7 +3444,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628053538}
   m_CullTransparentMesh: 1
->>>>>>> PlayerGUI
 --- !u!1001 &651905869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3624,10 +3619,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.61000025, y: 0.8763, z: 0.65721124}
   m_Center: {x: -0.00000047683716, y: 0.43815, z: 0.060007833}
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> PlayerGUI
 --- !u!64 &662164806
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4800,15 +4791,6 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 273572058455144636, guid: 84c7f3d75348a074e80ca761df3ab82e, type: 3}
-=======
->>>>>>> PlayerGUI
   serializedVersion: 3
   m_Size: {x: 0.7562162, y: 0.8763, z: 0.6572112}
   m_Center: {x: 0.0000023841858, y: 0.43815, z: 0.060011283}
@@ -4906,8 +4888,6 @@ Transform:
   - {fileID: 585444370}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &958430984
 GameObject:
   m_ObjectHideFlags: 0
@@ -5045,16 +5025,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958430984}
   m_CullTransparentMesh: 1
->>>>>>> PlayerGUI
 --- !u!1 &961082866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7386806972070765407, guid: 76d37d85c05b4364ea961094519ed7b0, type: 3}
   m_PrefabInstance: {fileID: 1658043962}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> PlayerGUI
 --- !u!1 &970344195
 GameObject:
   m_ObjectHideFlags: 0
@@ -8973,12 +8948,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7761196965149376361, guid: 84c7f3d75348a074e80ca761df3ab82e, type: 3}
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
---- !u!64 &1584262097
-MeshCollider:
-=======
 --- !u!1 &1534649715
 GameObject:
   m_ObjectHideFlags: 0
@@ -9116,7 +9085,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534649715}
   m_CullTransparentMesh: 1
->>>>>>> PlayerGUI
 --- !u!1001 &1560725896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9261,10 +9229,6 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1591251910
 GameObject:
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> PlayerGUI
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11090,12 +11054,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-<<<<<<< HEAD
   m_SourcePrefab: {fileID: 100100000, guid: 138d0852e3d6a79458e885febb13bb03, type: 3}
-=======
-<<<<<<< Updated upstream
-  m_SourcePrefab: {fileID: 100100000, guid: 347c066bd33d6384ab94940e3043a474, type: 3}
-=======
   m_SourcePrefab: {fileID: 100100000, guid: 138d0852e3d6a79458e885febb13bb03, type: 3}
 --- !u!1 &1935528248
 GameObject:
@@ -11234,8 +11193,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935528248}
   m_CullTransparentMesh: 1
->>>>>>> Stashed changes
->>>>>>> PlayerGUI
 --- !u!64 &1944156324
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24663,15 +24620,7 @@ SceneRoots:
   - {fileID: 921645469}
   - {fileID: 543450653080072944}
   - {fileID: 509730311}
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-  - {fileID: 779542603}
-  - {fileID: 2132186026}
-=======
   - {fileID: 368297570}
->>>>>>> Stashed changes
->>>>>>> PlayerGUI
   - {fileID: 1420076862}
   - {fileID: 1079227227}
   - {fileID: 955160080}
