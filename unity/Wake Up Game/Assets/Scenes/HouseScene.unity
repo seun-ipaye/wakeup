@@ -671,6 +671,7 @@ GameObject:
   - component: {fileID: 139892788}
   - component: {fileID: 139892790}
   - component: {fileID: 139892789}
+  - component: {fileID: 139892791}
   m_Layer: 0
   m_Name: SingleCabinet
   m_TagString: Untagged
@@ -751,6 +752,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139892787}
   m_Mesh: {fileID: 1969476169269212006, guid: 2b839187777025841b951bc99b5cebbf, type: 3}
+--- !u!65 &139892791
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139892787}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.61510944, y: 0.8763, z: 0.6572112}
+  m_Center: {x: -0.1550548, y: 0.43815, z: 0.060007125}
 --- !u!64 &144823394
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1726,6 +1748,7 @@ GameObject:
   - component: {fileID: 317366879}
   - component: {fileID: 317366881}
   - component: {fileID: 317366880}
+  - component: {fileID: 317366882}
   m_Layer: 0
   m_Name: ButtomCabinet3
   m_TagString: Untagged
@@ -1806,6 +1829,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317366878}
   m_Mesh: {fileID: 2363565981455421637, guid: 2b839187777025841b951bc99b5cebbf, type: 3}
+--- !u!65 &317366882
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317366878}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7562162, y: 0.8763, z: 0.6572112}
+  m_Center: {x: 0.0000026226044, y: 0.43815, z: 0.06001033}
 --- !u!1001 &328588742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2346,6 +2390,7 @@ GameObject:
   - component: {fileID: 461856391}
   - component: {fileID: 461856393}
   - component: {fileID: 461856392}
+  - component: {fileID: 461856394}
   m_Layer: 0
   m_Name: SinkCabinetBottom
   m_TagString: Untagged
@@ -2426,6 +2471,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461856390}
   m_Mesh: {fileID: 2363565981455421637, guid: 2b839187777025841b951bc99b5cebbf, type: 3}
+--- !u!65 &461856394
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461856390}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.75621635, y: 0.70280206, z: 0.65721124}
+  m_Center: {x: -1.1569975e-10, y: 0.35140103, z: 0.060006883}
 --- !u!1001 &472587130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3321,6 +3387,7 @@ GameObject:
   - component: {fileID: 657246918}
   - component: {fileID: 657246920}
   - component: {fileID: 657246919}
+  - component: {fileID: 657246921}
   m_Layer: 0
   m_Name: ButtomCabinet2
   m_TagString: Untagged
@@ -3401,6 +3468,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657246917}
   m_Mesh: {fileID: -939061152623264921, guid: 2b839187777025841b951bc99b5cebbf, type: 3}
+--- !u!65 &657246921
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657246917}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.61000025, y: 0.8763, z: 0.65721124}
+  m_Center: {x: -0.00000047683716, y: 0.43815, z: 0.060007833}
 --- !u!64 &662164806
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3527,6 +3615,7 @@ GameObject:
   - component: {fileID: 712270368}
   - component: {fileID: 712270370}
   - component: {fileID: 712270369}
+  - component: {fileID: 712270371}
   m_Layer: 0
   m_Name: ButtomCornerCabinets
   m_TagString: Untagged
@@ -3607,6 +3696,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712270367}
   m_Mesh: {fileID: -745928167409971724, guid: 2b839187777025841b951bc99b5cebbf, type: 3}
+--- !u!65 &712270371
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712270367}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.59733844, y: 0.8762999, z: 0.9334223}
+  m_Center: {x: -0.28298503, y: 0.38551936, z: -0.116096675}
 --- !u!64 &715704945
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4452,6 +4562,7 @@ GameObject:
   - component: {fileID: 934035327}
   - component: {fileID: 934035329}
   - component: {fileID: 934035328}
+  - component: {fileID: 934035330}
   m_Layer: 0
   m_Name: ButtomCabinet4
   m_TagString: Untagged
@@ -4532,6 +4643,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934035326}
   m_Mesh: {fileID: 2363565981455421637, guid: 2b839187777025841b951bc99b5cebbf, type: 3}
+--- !u!65 &934035330
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934035326}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7562162, y: 0.8763, z: 0.6572112}
+  m_Center: {x: 0.0000023841858, y: 0.43815, z: 0.060011283}
 --- !u!1001 &940666571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7865,7 +7997,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1459319646}
-  - component: {fileID: 1459319647}
   m_Layer: 0
   m_Name: KitchenCounters and Sink
   m_TagString: Untagged
@@ -7901,27 +8032,6 @@ Transform:
   - {fileID: 397332905}
   m_Father: {fileID: 1591251911}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1459319647
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459319645}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1473560235
 GameObject:
   m_ObjectHideFlags: 0
