@@ -31,6 +31,38 @@ public class DayManager : MonoBehaviour
         changing = false;
     }
 
+    void Start()
+    {
+        //start clock when the game starts on the first day
+        if (GameClock.Instance != null) {
+
+            //listen for clock reaching time limit
+            GameClock.Instance.OnTimeUp += HandleTimeUp;
+
+            GameClock.Instance.StartMorning();
+            Debug.Log("DayManager started the morning clock");
+        } else {
+            Debug.LogError("GameClock instance not found");
+        }
+    }
+
+    //called when the clock reaches time limit in morning
+    void HandleTimeUp()
+    {
+        Debug.Log("Time limit reached! The player is late for work.");
+
+        Lose("Took too much time getting ready for work");
+    }
+
+    //destroy event listener when the scene is reloaded
+    void OnDestroy()
+    {
+        //restart the clock when the scene is reloaded for a new morning
+        if (GameClock.Instance != null){
+            GameClock.Instance.OnTimeUp -= HandleTimeUp;
+        }
+    }
+
     // called by the front door
     [ContextMenu("Go To Work")]
     public void GoToWork()

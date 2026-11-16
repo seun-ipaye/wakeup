@@ -7,6 +7,7 @@ public class Interactor : MonoBehaviour
     public float interactDistance = 2f;
 
     private InteractableInterface current;
+    private ClockInteractable currentClock;
     private float hover;
 
     private Image ring;
@@ -22,8 +23,22 @@ public class Interactor : MonoBehaviour
     void Update()
     {
         current = null;
+        currentClock = null;
+
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, interactDistance))
+        {
             current = hit.collider.GetComponentInParent<InteractableInterface>();
+            currentClock = hit.collider.GetComponentInParent<ClockInteractable>();
+        }
+
+        //show/hide the clock UI
+        if (HUDManager.Instance != null)
+        {
+            if (currentClock != null && !SleepFader.Busy)
+                HUDManager.Instance.ShowClock();
+            else
+                HUDManager.Instance.HideClock();
+        }
 
         if (current != null && !SleepFader.Busy && Keyboard.current.eKey.wasPressedThisFrame)
             current.Interact();
