@@ -8179,7 +8179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935028280b8aa44de89f5303fdf971ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnomalyManager
-  mode: 2
+  mode: 0
   firstDayChance: 0.5
   lastDayChance: 0.8
   lowestChance: 0.2
@@ -13785,7 +13785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackwardsClock
   anomalyName: BackwardsClock
-  tier: 1
+  tier: 2
   clocks:
   - {fileID: 798516330}
   - {fileID: 7915565932451778582}
