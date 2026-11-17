@@ -75,6 +75,12 @@ public class DayManager : MonoBehaviour
             return;
         }
 
+        if (TaskManager.Instance != null && !TaskManager.Instance.RequiredTasksDone)
+        {
+            Lose("Went to work without finishing the morning routine");
+            return;
+        }
+
         if (CurrentDay >= MaxDays)
         {
             Win();

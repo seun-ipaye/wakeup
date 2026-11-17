@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
@@ -6,7 +8,6 @@ public class HUDManager : MonoBehaviour
 {
     public static HUDManager Instance { get; private set; } //reference to this script
     //Awake when script is created
-    [SerializeField] private TaskManager taskManager;
     [SerializeField] private DayManager dayManager;
 
     [Header("UI Visual Components")]
@@ -23,14 +24,13 @@ public class HUDManager : MonoBehaviour
 
     private bool showClock = false;
 
-    [Header("UI Visual Components")]
-    [SerializeField] TextMeshProUGUI GetDressedTaskText;
-    [SerializeField] TextMeshProUGUI MakeCoffeeTaskText;
-    [SerializeField] TextMeshProUGUI GrabKeysTaskText;
-    [SerializeField] TextMeshProUGUI LeaveForWorkTaskText;
+    [Header("Objectives")]
+    [Tooltip("Seconds a finished objective stays crossed out before hiding")]
+    [SerializeField] private float objectiveHideDelay = 2f;
+
+    private readonly Dictionary<MorningTask, TextMeshProUGUI> objectiveRows = new Dictionary<MorningTask, TextMeshProUGUI>();
 
     private void Awake() {
-        //GetDressedComplete.text = taskManager.
         Instance = this;
 
         ClockPanel.SetActive(false);
@@ -41,9 +41,14 @@ public class HUDManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //UpdateUI();
         updateDay();
-        UpdateUI();
+        BuildObjectives();
+    }
+
+    void OnDestroy()
+    {
+        if (TaskManager.Instance != null)
+            TaskManager.Instance.TaskProgressed -= UpdateObjective;
     }
 
     // Update is called once per frame
@@ -52,32 +57,9 @@ public class HUDManager : MonoBehaviour
         //Updating day of the week
         updateDay();
 
-        //Updating objectives
-        UpdateUI();
-
         //update the clock display
         UpdateClockUI();
     }
-    void UpdateUI() { 
-        if (taskManager.isGetDressedComplete) {   //Dressed objective complete
-            GetDressedTaskText.fontStyle = FontStyles.Strikethrough;
-            Invoke(nameof(DisableDressed), 2f);
-        }
-        if (taskManager.isMakeCoffeeComplete) {   //Make coffee objective complete
-            MakeCoffeeTaskText.fontStyle = FontStyles.Strikethrough;
-            Invoke(nameof(DisableCoffee), 2f);
-        }
-        if (taskManager.isGrabKeysComplete) {   //Grab keys objective complete
-            GrabKeysTaskText.fontStyle = FontStyles.Strikethrough;
-            Invoke(nameof(DisableKeys), 2f);
-        }
-        if (taskManager.isLeaveForWorkComplete) { //Leave for work objective complete
-            LeaveForWorkTaskText.fontStyle = FontStyles.Strikethrough;
-            Invoke(nameof(DisableLeaveForWork), 2f);
-        }
-
-    }
-
 
     //show the clock UI when player looks at a clock object
     public void ShowClock()
@@ -115,23 +97,6 @@ public class HUDManager : MonoBehaviour
         ClockPanel.SetActive(ClockCanvasGroup.alpha > 0f);
     }
 
-    void DisableDressed()
-    {
-        GetDressedTaskText.gameObject.SetActive(false);
-    }
-    void DisableKeys()
-    {
-        GrabKeysTaskText.gameObject.SetActive(false);
-    }
-    void DisableLeaveForWork()
-    {
-        LeaveForWorkTaskText.gameObject.SetActive(false);
-    }
-    void DisableCoffee()
-    {
-        MakeCoffeeTaskText.gameObject.SetActive(false);
-    }
-
     void DisableObjective(GameObject objective)
     {
         objective.gameObject.SetActive(false);
@@ -157,9 +122,53 @@ public class HUDManager : MonoBehaviour
                 break;
         }
     }
-    void updateObjectives()
+    //the first text under ObjectivesList is the style template for every task line
+    void BuildObjectives()
     {
+        if (ObjectivesList == null || TaskManager.Instance == null) return;
 
+        TextMeshProUGUI template = ObjectivesList.GetComponentInChildren<TextMeshProUGUI>(true);
+        if (template == null)
+        {
+            Debug.LogWarning("ObjectivesList needs one text inside it to copy the style from");
+            return;
+        }
 
+        foreach (Transform child in ObjectivesList.transform)
+            child.gameObject.SetActive(false);
+
+        foreach (MorningTask task in TaskManager.Instance.Today)
+        {
+            TextMeshProUGUI row = Instantiate(template, ObjectivesList.transform);
+            row.name = "Objective " + task.Name;
+            row.fontStyle &= ~FontStyles.Strikethrough;
+            row.gameObject.SetActive(true);
+
+            objectiveRows[task] = row;
+            UpdateObjective(task);
+        }
+
+        TaskManager.Instance.TaskProgressed += UpdateObjective;
+    }
+
+    void UpdateObjective(MorningTask task)
+    {
+        if (!objectiveRows.TryGetValue(task, out TextMeshProUGUI row)) return;
+
+        row.text = task.StepsRequired > 1
+            ? $"{task.Name} ({task.Steps}/{task.StepsRequired})"
+            : task.Name;
+
+        if (task.IsComplete)
+        {
+            row.fontStyle |= FontStyles.Strikethrough;
+            StartCoroutine(HideObjectiveLater(row));
+        }
+    }
+
+    IEnumerator HideObjectiveLater(TextMeshProUGUI row)
+    {
+        yield return new WaitForSeconds(objectiveHideDelay);
+        row.gameObject.SetActive(false);
     }
 }

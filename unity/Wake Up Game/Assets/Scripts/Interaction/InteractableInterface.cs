@@ -5,4 +5,5 @@ public interface InteractableInterface
     string Prompt { get; }
     // called once when the player presses E
     void Interact();
+    bool CanInteract => true;
 }
