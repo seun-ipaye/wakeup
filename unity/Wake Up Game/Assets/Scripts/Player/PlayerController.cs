@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     public float mouseSensitivity = 0.1f;
     [Tooltip("How far up/down the player can look")]
     public float maxPitch = 80f;
-    [Tooltip("FOV (target: 70-80).")]
-    public float fieldOfView = 75f;
+    [Tooltip("Camera field of view, set when the game starts")]
+    public float fieldOfView = 60f;
  
     private CharacterController controller;
     private float pitch;

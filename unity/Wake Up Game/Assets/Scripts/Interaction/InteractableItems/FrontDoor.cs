@@ -7,6 +7,7 @@ public class FrontDoor : MonoBehaviour, InteractableInterface
 
     public void Interact()
     {
-        DayManager.Instance.GoToWork();
+        if (SleepFader.Busy) return;
+        SleepFader.Sleep(() => DayManager.Instance.GoToWork());
     }
 }
