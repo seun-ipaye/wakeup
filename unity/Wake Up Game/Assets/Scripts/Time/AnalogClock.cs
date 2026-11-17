@@ -7,9 +7,11 @@ public class AnalogClock : MonoBehaviour
     public Transform hourHand;
     public Transform minuteHand;
 
-    // Set these depending on how your model is oriented.
+    //set these depending on how your model is oriented
     public Vector3 rotationAxis = Vector3.forward;
 
+    //if the clock hands should move backwards (anomaly)
+    public bool reverseHands = false;
 
     private void Update()
     {
@@ -20,12 +22,21 @@ public class AnalogClock : MonoBehaviour
         int minute = GameClock.Instance.CurrentMinute;
 
 
-        // Calculate hand rotation
+        //calculate hand rotation
         float minuteAngle = minute * 6f;
 
         float hourAngle = (hour % 12) * 30f + minute * 0.5f;
 
-        // Rotate the hands
+
+        //reverse the rotation of hands when anomaly is active
+        if (reverseHands)
+        {
+            minuteAngle = -minuteAngle;
+            hourAngle = -hourAngle;
+        }
+
+
+        //rotate the hands
         minuteHand.localRotation = Quaternion.AngleAxis(minuteAngle, rotationAxis);
 
         hourHand.localRotation = Quaternion.AngleAxis(hourAngle, rotationAxis);

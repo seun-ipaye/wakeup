@@ -64,10 +64,10 @@ public class GameClock : MonoBehaviour
         );
 
 
-        // Log the current game time every 15 real-life seconds
+        // Log the current game time every 30 real-life seconds
         debugTimer += Time.deltaTime;
 
-        if (debugTimer >= 15f)
+        if (debugTimer >= 30f)
         {
             Debug.Log("Current Game Time: " + GetFormattedTime());
             debugTimer = 0f;
