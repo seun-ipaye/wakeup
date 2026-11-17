@@ -31,6 +31,9 @@ public class Interactor : MonoBehaviour
             currentClock = hit.collider.GetComponentInParent<ClockInteractable>();
         }
 
+        if (current != null && !current.CanInteract)
+            current = null;
+
         //show/hide the clock UI
         if (HUDManager.Instance != null)
         {
