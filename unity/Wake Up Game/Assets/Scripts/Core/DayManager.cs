@@ -20,6 +20,28 @@ public class DayManager : MonoBehaviour
     // set each morning by AnomalyManager
     [HideInInspector] public bool hasAnomaly;
 
+    [Header("Front door messages")]
+    [TextArea(3, 6)] public string wentToWorkMessage =
+        "You went to work and had a long, stressful day.\n\nThat night you fell asleep the moment your head hit the pillow...\n\n...and woke up to your alarm again.";
+    [TextArea(3, 6)] public string missedAnomalyMessage =
+        "You slept through your alarm and missed work.\n\nWhat a dream...\n\nBack to Monday.";
+    [TextArea(3, 6)] public string unfinishedTasksMessage =
+        "You rushed out the door without finishing your morning routine.\n\nThe whole day fell apart from there.\n\nBack to Monday.";
+    [TextArea(3, 6)] public string wonMessage =
+        "You made it through the whole week.\n\nFinally, the weekend.";
+
+    [Header("Bed messages")]
+    [TextArea(3, 6)] public string escapedDreamMessage =
+        "It was only a dream.\n\nYou drift off again...";
+    [TextArea(3, 6)] public string sleptOnNormalMorningMessage =
+        "You went back to sleep... but you weren't dreaming.\n\nYou overslept and missed work.\n\nBack to Monday.";
+    [TextArea(3, 6)] public string outOfRepeatsMessage =
+        "No matter how many times you close your eyes, you can't seem to wake up.\n\nBack to Monday.";
+
+    [Header("Clock messages")]
+    [TextArea(3, 6)] public string lateMessage =
+        "You lost track of time and were late for work.\n\nBack to Monday.";
+
     // other scripts (UI, anomalies) can listen for these
     public static event Action<int> DayChanged;
     public static event Action Won;
@@ -51,7 +73,12 @@ public class DayManager : MonoBehaviour
     {
         Debug.Log("Time limit reached! The player is late for work.");
 
-        Lose("Took too much time getting ready for work");
+        if (SleepFader.Busy) return;
+        SleepFader.Sleep(() =>
+        {
+            SleepFader.ShowMessage(lateMessage);
+            Lose("Took too much time getting ready for work");
+        });
     }
 
     //destroy event listener when the scene is reloaded
@@ -71,22 +98,26 @@ public class DayManager : MonoBehaviour
 
         if (hasAnomaly)
         {
+            SleepFader.ShowMessage(missedAnomalyMessage);
             Lose("Went to work but something was wrong");
             return;
         }
 
         if (TaskManager.Instance != null && !TaskManager.Instance.RequiredTasksDone)
         {
+            SleepFader.ShowMessage(unfinishedTasksMessage);
             Lose("Went to work without finishing the morning routine");
             return;
         }
 
         if (CurrentDay >= MaxDays)
         {
+            SleepFader.ShowMessage(wonMessage, stayBlack: true);
             Win();
             return;
         }
 
+        SleepFader.ShowMessage(wentToWorkMessage);
         NextDay();
         StartMorning();
     }
@@ -99,16 +130,19 @@ public class DayManager : MonoBehaviour
 
         if (!hasAnomaly)
         {
+            SleepFader.ShowMessage(sleptOnNormalMorningMessage);
             Lose("Went back to bed on a normal morning");
             return;
         }
 
         if (RepeatsUsed >= MaxRepeats)
         {
+            SleepFader.ShowMessage(outOfRepeatsMessage);
             Lose("Out of repeats");
             return;
         }
 
+        SleepFader.ShowMessage(escapedDreamMessage);
         RepeatsUsed++;
         Debug.Log($"Repeating Day {CurrentDay} ({RepeatsUsed}/{MaxRepeats})");
         StartMorning();
