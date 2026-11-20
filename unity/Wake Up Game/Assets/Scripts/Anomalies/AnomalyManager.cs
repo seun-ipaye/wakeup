@@ -106,7 +106,7 @@ public class AnomalyManager : MonoBehaviour
         Debug.Log("Selected anomaly: " + selectedAnomaly.anomalyName);
     }
 
-    //resetanomaly history when new week starts
+    //reset anomaly history when new week starts
     public void ResetUsedAnomalies()
     {
         usedAnomalies.Clear();
