@@ -203,6 +203,8 @@ public class DayManager : MonoBehaviour
             AnomalyManager.Instance.ResetStorySelection();
         }
 
+        ThoughtInteractable.ResetThoughtHistory();
+
         Debug.Log("Week reset to Day 1");
         DayChanged?.Invoke(CurrentDay);
     }
@@ -211,6 +213,8 @@ public class DayManager : MonoBehaviour
     {
         CurrentDay = CheckpointDay;
         RepeatsUsed = 0;
+
+        ThoughtInteractable.ResetThoughtHistory();
 
         Debug.Log($"Restarting from Day {CurrentDay}");
         DayChanged?.Invoke(CurrentDay);

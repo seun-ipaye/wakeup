@@ -43,8 +43,12 @@ public class Interactor : MonoBehaviour
                 HUDManager.Instance.HideClock();
         }
 
-        if (current != null && !SleepFader.Busy && Keyboard.current.eKey.wasPressedThisFrame)
+        if (current != null && !SleepFader.Busy && Keyboard.current.eKey.wasPressedThisFrame) {
+            if (ThoughtUI.Instance != null && ThoughtUI.Instance.IsShowing)
+                return;
+
             current.Interact();
+        }
 
         if (current != null)
         {
