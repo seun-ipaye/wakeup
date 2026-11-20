@@ -31,6 +31,7 @@ public class ThoughtInteractable : MonoBehaviour, InteractableInterface
 
     [Header("Daily Thoughts")]
     public DailyThought[] thoughts;
+    public float displayDuration = 4f;
 
     //track which day each object was examined
     private static Dictionary<string, int> examinedObjects = new Dictionary<string, int>();
@@ -55,7 +56,7 @@ public class ThoughtInteractable : MonoBehaviour, InteractableInterface
 
         if (thought != null && ThoughtUI.Instance != null)
         {
-            ThoughtUI.Instance.ShowThought(thought);
+            ThoughtUI.Instance.ShowThought(thought, displayDuration);
         }
     }
 
