@@ -44,7 +44,11 @@ public class PlayerController : MonoBehaviour
  
         if (keyboard.escapeKey.wasPressedThisFrame) LockCursor(false);
         if (mouse.leftButton.wasPressedThisFrame && Cursor.lockState != CursorLockMode.Locked) LockCursor(true);
- 
+
+        if (ThoughtUI.Instance != null && ThoughtUI.Instance.IsShowing) {
+            return;
+        }
+
         if (Cursor.lockState == CursorLockMode.Locked)
             Look(mouse.delta.ReadValue());
  
