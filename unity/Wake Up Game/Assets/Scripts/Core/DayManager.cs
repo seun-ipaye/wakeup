@@ -14,6 +14,13 @@ public class DayManager : MonoBehaviour
     public static int CurrentDay { get; private set; } = 1;
     public static int RepeatsUsed { get; private set; }
 
+    //tracks the latest day reached in Story Mode --> flexibility to choose between a full week reset and a single day reset later
+    public static int CheckpointDay { get; private set; } = 1;
+
+    //tracks if player has used their second chance today
+    public static bool SecondChanceUsed { get; private set; }
+
+
     // blocks repeat calls once a new morning is loading
     static bool changing;
 
@@ -99,7 +106,7 @@ public class DayManager : MonoBehaviour
         if (hasAnomaly)
         {
             SleepFader.ShowMessage(missedAnomalyMessage);
-            Lose("Went to work but something was wrong");
+            MissedAnomaly();
             return;
         }
 
@@ -120,6 +127,21 @@ public class DayManager : MonoBehaviour
         SleepFader.ShowMessage(wentToWorkMessage);
         NextDay();
         StartMorning();
+    }
+
+    void MissedAnomaly()
+    {
+        if (GameModeManager.Instance.currentMode == GameMode.Story && !SecondChanceUsed)
+        {
+            SecondChanceUsed = true;
+
+            Debug.Log("(Story Mode) Second chance activated");
+            StartMorning();
+        }
+        else
+        {
+            Lose("Went to work but something was wrong");
+        }
     }
 
     // called by the bed
@@ -143,6 +165,11 @@ public class DayManager : MonoBehaviour
         }
 
         SleepFader.ShowMessage(escapedDreamMessage);
+
+        if (GameModeManager.Instance.currentMode == GameMode.Story) {
+            AnomalyManager.Instance.FoundStoryAnomaly();
+        }
+
         RepeatsUsed++;
         Debug.Log($"Repeating Day {CurrentDay} ({RepeatsUsed}/{MaxRepeats})");
         StartMorning();
@@ -152,6 +179,14 @@ public class DayManager : MonoBehaviour
     {
         CurrentDay++;
         RepeatsUsed = 0;
+        SecondChanceUsed = false;
+
+        //if in story mode, update checkpoint day to current day
+        if (GameModeManager.Instance.currentMode == GameMode.Story) {
+            CheckpointDay = CurrentDay;
+            Debug.Log($"(Story Mode) Checkpoint updated to Day {CheckpointDay}");
+        }
+
         Debug.Log($"Day {CurrentDay}");
         DayChanged?.Invoke(CurrentDay);
     }
@@ -159,11 +194,25 @@ public class DayManager : MonoBehaviour
     public void ResetWeek()
     {
         CurrentDay = 1;
+        CheckpointDay = 1;
         RepeatsUsed = 0;
 
-        AnomalyManager.Instance.ResetUsedAnomalies();
+        if (AnomalyManager.Instance != null)
+        {
+            AnomalyManager.Instance.ResetUsedAnomalies();
+            AnomalyManager.Instance.ResetStorySelection();
+        }
 
         Debug.Log("Week reset to Day 1");
+        DayChanged?.Invoke(CurrentDay);
+    }
+
+    public void RestartFromCheckpoint()
+    {
+        CurrentDay = CheckpointDay;
+        RepeatsUsed = 0;
+
+        Debug.Log($"Restarting from Day {CurrentDay}");
         DayChanged?.Invoke(CurrentDay);
     }
 
@@ -177,7 +226,25 @@ public class DayManager : MonoBehaviour
     {
         Debug.Log($"Lost: {reason}");
         Lost?.Invoke();
-        ResetWeek();
+
+        if (GameModeManager.Instance.currentMode == GameMode.Story) {
+            if (!SecondChanceUsed)
+            {
+                //another attempt for player
+                SecondChanceUsed = true;
+
+                Debug.Log("(Story Mode) Second chance activated");
+                StartMorning();
+                return;
+            } else {
+                Debug.Log($"(Story Mode) Restarting from checkpoint Day {CheckpointDay}");
+                RestartFromCheckpoint();
+                SecondChanceUsed = false;
+            }
+        } else { 
+            ResetWeek();
+        }
+        
         StartMorning();
     }
 

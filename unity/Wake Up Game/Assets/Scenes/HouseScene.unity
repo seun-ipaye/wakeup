@@ -8441,6 +8441,35 @@ MonoBehaviour:
   - {fileID: 1576230799}
   - {fileID: 1821528517}
   selectedAnomaly: {fileID: 0}
+  storyDayAnomalies:
+  - dayName: Monday
+    minAnomalies: 0
+    maxAnomalies: 0
+    anomalies: []
+  - dayName: Tuesday
+    minAnomalies: 1
+    maxAnomalies: 1
+    anomalies:
+    - {fileID: 585444371}
+    - {fileID: 1576230799}
+    - {fileID: 1821528517}
+  - dayName: Wednesday
+    minAnomalies: 1
+    maxAnomalies: 2
+    anomalies:
+    - {fileID: 0}
+  - dayName: Thursday
+    minAnomalies: 1
+    maxAnomalies: 3
+    anomalies:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - dayName: Friday
+    minAnomalies: 1
+    maxAnomalies: 2
+    anomalies:
+    - {fileID: 0}
 --- !u!4 &1079227227
 Transform:
   m_ObjectHideFlags: 0

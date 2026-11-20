@@ -1,5 +1,13 @@
 using UnityEngine;
 
+[System.Serializable]
+public class StoryDayAnomalies {
+    public string dayName;
+    public int minAnomalies;
+    public int maxAnomalies;
+    public Anomaly[] anomalies;
+}
+
 // Decides each morning whether there is an anomaly and how subtle it is
 public class AnomalyManager : MonoBehaviour
 {
@@ -22,9 +30,18 @@ public class AnomalyManager : MonoBehaviour
     public bool hasAnomaly;
     public int tier;
 
-    [Header("Available Anomalies")]
+    [Header("Hardcore Anomalies")]
     public Anomaly[] anomalies;
     public Anomaly selectedAnomaly;
+
+    //keeps selected story mode anomaly across scene reloads
+    private static int storySelectedAnomalyIndex = -1;
+    private static int storySelectedDay = 0;
+    private static int storyAnomaliesRemaining;
+    private static int storyCountSelectedDay = 0;
+
+    [Header("Story Mode Anomalies")]
+    public StoryDayAnomalies[] storyDayAnomalies;
 
     //anomalies already used this week
     private static System.Collections.Generic.List<Anomaly> usedAnomalies = new System.Collections.Generic.List<Anomaly>();
@@ -36,11 +53,16 @@ public class AnomalyManager : MonoBehaviour
 
     void Start()
     {
-        hasAnomaly = RollAnomaly();
-        tier = hasAnomaly ? PickTier() : 0;
+        if (GameModeManager.Instance.currentMode == GameMode.Story) {
+            SelectStoryAnomaly();
+        } else {
+            hasAnomaly = RollAnomaly();
+            tier = hasAnomaly ? PickTier() : 0;
 
-        if (hasAnomaly){
-            SelectAnomaly();
+            if (hasAnomaly)
+            {
+                SelectAnomaly();
+            }
         }
 
         DayManager.Instance.hasAnomaly = hasAnomaly;
@@ -106,6 +128,93 @@ public class AnomalyManager : MonoBehaviour
         Debug.Log("Selected anomaly: " + selectedAnomaly.anomalyName);
     }
 
+    //select anomaly from the story mode pool for current day
+    void SelectStoryAnomaly()
+    {
+
+        int dayIndex = DayManager.CurrentDay - 1;
+
+        //check that current day has configured anomaly pool listed
+        if (dayIndex < 0 || dayIndex >= storyDayAnomalies.Length)
+        {
+            Debug.LogWarning("No story mode anomaly pool for this day");
+            return;
+        }
+
+        StoryDayAnomalies day = storyDayAnomalies[dayIndex];
+
+        //only choose the number of anomalies once per day
+        if (storyCountSelectedDay != DayManager.CurrentDay)
+        {
+            storyAnomaliesRemaining = Random.Range(day.minAnomalies, day.maxAnomalies + 1);
+            storyCountSelectedDay = DayManager.CurrentDay;
+
+            Debug.Log($"(Story Mode) {day.dayName}: {storyAnomaliesRemaining} anomalies today");
+        }
+
+        //no anomalies remaining == normal morning
+        if (storyAnomaliesRemaining <= 0)
+        {
+            hasAnomaly = false;
+            tier = 0;
+            selectedAnomaly = null;
+
+            Debug.Log("(Story Mode) Normal morning");
+            return;
+        }
+
+        //reuse selected anomaly if player is retrying
+        if (day.anomalies == null || day.anomalies.Length == 0) {
+            Debug.LogWarning("No anomalies assigned to " + day.dayName);
+            return;
+        }
+
+        //reuse same anomaly if player is retrying
+        if (storySelectedDay == DayManager.CurrentDay &&
+            storySelectedAnomalyIndex >= 0 &&
+            storySelectedAnomalyIndex < day.anomalies.Length &&
+            day.anomalies[storySelectedAnomalyIndex] != null)
+        {
+            selectedAnomaly = day.anomalies[storySelectedAnomalyIndex];
+        } else {
+            //choose a new anomaly and save position in array
+            storySelectedAnomalyIndex = Random.Range(0, day.anomalies.Length);
+            selectedAnomaly = day.anomalies[storySelectedAnomalyIndex];
+            storySelectedDay = DayManager.CurrentDay;
+        }
+
+        if (selectedAnomaly == null)
+        {
+            Debug.LogWarning("Selected anomaly is missing");
+            return;
+        }
+
+        hasAnomaly = true;
+        tier = selectedAnomaly.tier;
+
+        selectedAnomaly.Activate();
+
+        Debug.Log("(Story Mode) Selected anomaly: " + selectedAnomaly.anomalyName);
+
+    }
+
+
+    //when player successfully finds anomaly
+    public void FoundStoryAnomaly()
+    {
+        if (GameModeManager.Instance.currentMode != GameMode.Story)
+            return;
+
+        storyAnomaliesRemaining--;
+
+        //clear selected anomaly so another one can be selected
+        storySelectedAnomalyIndex = -1;
+        storySelectedDay = 0;
+
+        Debug.Log($"(Story Mode) Anomalies remaining: {storyAnomaliesRemaining}");
+    }
+
+
     //reset anomaly history when new week starts
     public void ResetUsedAnomalies()
     {
@@ -114,4 +223,13 @@ public class AnomalyManager : MonoBehaviour
         Debug.Log("Anomaly history reset for the new week");
     }
 
+    //reset saved story mode anomaly history
+    public void ResetStorySelection()
+    {
+        storySelectedAnomalyIndex = -1;
+        storySelectedDay = 0;
+
+        storyAnomaliesRemaining = 0;
+        storyCountSelectedDay = 0;
+    }
 }
