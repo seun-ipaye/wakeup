@@ -69,3 +69,27 @@ To open this project in Unity:
 3. Navigate to the cloned project folder and select it. Make sure you select the folder containing `Assets`, `Packages`, and `ProjectSettings`.
 4. Open the project in Unity Hub.
 
+### Code Documentation
+Wake Up! uses Doxygen to generate documentation for the C# scripts used in Wake Up Game.
+
+## Documentation Location
+The generated documentation is located in the Documentation folder (Documentation/)
+
+To view:
+- Download or clone the GitHub repository.
+- Navigate to Documentation/html/
+- Open index.html in a web browser
+- Use the navigation menu to explore classes, methods, properties, and their descriptions.
+
+## Recreating the Documentation
+To update the documentation after modifying scripts:
+
+- Download and install Doxygen from https://www.doxygen.nl/download.html
+- Open Doxywizard
+- Load the DoxyFile configuration located in the Documentation folder
+- Navigate to the Run Tab
+- Click Run Doxygen
+- The updated HTML documentation will be in the Documentation/html folder
+
+
+

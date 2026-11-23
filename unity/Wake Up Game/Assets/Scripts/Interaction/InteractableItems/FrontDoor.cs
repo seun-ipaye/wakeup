@@ -1,6 +1,8 @@
 using UnityEngine;
 
-// The front door: leave for work
+/// <summary>
+/// The front door: leave for work
+/// </summary>
 public class FrontDoor : MonoBehaviour, InteractableInterface
 {
     public string Prompt => "Go to work";

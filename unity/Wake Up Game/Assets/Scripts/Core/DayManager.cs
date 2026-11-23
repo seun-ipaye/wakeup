@@ -2,29 +2,36 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Tracks the work week and handles the go-to-work / go-to-bed decision
+/// <summary>
+/// 
+/// Tracks the work week and handles the go-to-work / go-to-bed decision
+///Story Mode allows second chances and checkpoint restarts
+///Hardcore Mode resets the entire week after losing </summary>
 public class DayManager : MonoBehaviour
 {
     public static DayManager Instance { get; private set; }
 
+    ///Max number of days needed to win the game
     public const int MaxDays = 5;
-    public const int MaxRepeats = 5;
+    public const int MaxRepeats = 5; //Mac number of times the player can repeat a day by going to bed
 
-    // static so these survive when the House scene reloads for a new morning
+    ///tracks the current day and number of repeats used
+    /// static so these survive when the House scene reloads for a new morning
     public static int CurrentDay { get; private set; } = 1;
     public static int RepeatsUsed { get; private set; }
 
-    //tracks the latest day reached in Story Mode --> flexibility to choose between a full week reset and a single day reset later
+    ///stores the latest checkpoint day for Story Mode
+    ///tracks the latest day reached in Story Mode --> flexibility to choose between a full week reset and a single day reset later
     public static int CheckpointDay { get; private set; } = 1;
 
-    //tracks if player has used their second chance today
+    ///tracks if player has used their Story Mode second chance today
     public static bool SecondChanceUsed { get; private set; }
 
 
-    // blocks repeat calls once a new morning is loading
+    /// blocks repeat calls once a new morning is loading
     static bool changing;
 
-    // set each morning by AnomalyManager
+    /// set each morning by AnomalyManager
     [HideInInspector] public bool hasAnomaly;
 
     [Header("Front door messages")]
@@ -49,10 +56,11 @@ public class DayManager : MonoBehaviour
     [TextArea(3, 6)] public string lateMessage =
         "You lost track of time and were late for work.\n\nBack to Monday.";
 
-    // other scripts (UI, anomalies) can listen for these
+    /// other scripts (UI, anomalies) can listen for these
+    ///Triggered when the day changes or resets. Passes the current day number.
     public static event Action<int> DayChanged;
-    public static event Action Won;
-    public static event Action Lost;
+    public static event Action Won; ///Triggered when the player successfully completes the five-day week
+    public static event Action Lost; ///Triggered when the player loses, including when a second chance is available.
 
     void Awake()
     {
@@ -60,12 +68,13 @@ public class DayManager : MonoBehaviour
         changing = false;
     }
 
+    ///Starts the Morning clock 
     void Start()
     {
-        //start clock when the game starts on the first day
+        ///start clock when the game starts on the first day
         if (GameClock.Instance != null) {
 
-            //listen for clock reaching time limit
+            ///listen for clock reaching time limit
             GameClock.Instance.OnTimeUp += HandleTimeUp;
 
             GameClock.Instance.StartMorning();
@@ -75,7 +84,7 @@ public class DayManager : MonoBehaviour
         }
     }
 
-    //called when the clock reaches time limit in morning
+    ///called when the clock reaches time limit in morning
     void HandleTimeUp()
     {
         Debug.Log("Time limit reached! The player is late for work.");
@@ -88,16 +97,17 @@ public class DayManager : MonoBehaviour
         });
     }
 
-    //destroy event listener when the scene is reloaded
+    ///destroy the clock event listener when the scene is reloaded
     void OnDestroy()
     {
-        //restart the clock when the scene is reloaded for a new morning
+        ///restart the clock when the scene is reloaded for a new morning
         if (GameClock.Instance != null){
             GameClock.Instance.OnTimeUp -= HandleTimeUp;
         }
     }
 
-    // called by the front door
+    /// called by the front door
+    ///An anomaly causes a failed morning, unfinished tasks cause a loss, and completing Day 5 successfully triggers a win. Otherwise advances to next day.
     [ContextMenu("Go To Work")]
     public void GoToWork()
     {
@@ -129,6 +139,7 @@ public class DayManager : MonoBehaviour
         StartMorning();
     }
 
+    ///Gives one extra attempt in Story Mode when an anomaly is missed. Otherwise, triggers a loss.
     void MissedAnomaly()
     {
         if (GameModeManager.Instance.currentMode == GameMode.Story && !SecondChanceUsed)
@@ -144,7 +155,9 @@ public class DayManager : MonoBehaviour
         }
     }
 
-    // called by the bed
+    /// called by the bed
+    ///Going to bed will repeat the current day if an anomaly exists and repeats remain
+    ///Sleeping on a normal morning or exceeding MaxRepeats causes a loss
     [ContextMenu("Go To Bed")]
     public void GoToBed()
     {
@@ -175,13 +188,14 @@ public class DayManager : MonoBehaviour
         StartMorning();
     }
 
+    ///Advances to the next day, resets repeats and second chance. Updates the Story Mode checkpoint and triggers DayChanged.
     public void NextDay()
     {
         CurrentDay++;
         RepeatsUsed = 0;
         SecondChanceUsed = false;
 
-        //if in story mode, update checkpoint day to current day
+        ///if in story mode, update checkpoint day to current day
         if (GameModeManager.Instance.currentMode == GameMode.Story) {
             CheckpointDay = CurrentDay;
             Debug.Log($"(Story Mode) Checkpoint updated to Day {CheckpointDay}");
@@ -191,6 +205,7 @@ public class DayManager : MonoBehaviour
         DayChanged?.Invoke(CurrentDay);
     }
 
+    ///Resets the week to Day 1, clears repeat counts and anomaly histoy, and triggers DayChanged.
     public void ResetWeek()
     {
         CurrentDay = 1;
@@ -209,6 +224,8 @@ public class DayManager : MonoBehaviour
         DayChanged?.Invoke(CurrentDay);
     }
 
+    ///Restarts from the saved Story Mode checkpoint
+    ///resets repeats and thought history, and triggers DayChanged
     public void RestartFromCheckpoint()
     {
         CurrentDay = CheckpointDay;
@@ -220,12 +237,14 @@ public class DayManager : MonoBehaviour
         DayChanged?.Invoke(CurrentDay);
     }
 
+    ///Triggers the won event after successfully completing Day 5.
     void Win()
     {
         Debug.Log("You made it through the week!");
         Won?.Invoke();
     }
 
+    ///Triggers the Lost Event; Story Mode checks for a second chance or returns to the checkpoint if used, Hardcore Mode resets the entire week
     void Lose(string reason)
     {
         Debug.Log($"Lost: {reason}");
@@ -234,7 +253,7 @@ public class DayManager : MonoBehaviour
         if (GameModeManager.Instance.currentMode == GameMode.Story) {
             if (!SecondChanceUsed)
             {
-                //another attempt for player
+                ///another attempt for player
                 SecondChanceUsed = true;
 
                 Debug.Log("(Story Mode) Second chance activated");
@@ -252,7 +271,7 @@ public class DayManager : MonoBehaviour
         StartMorning();
     }
 
-    // reload the house so every morning starts fresh
+    /// reload the house so every morning starts fresh
     void StartMorning()
     {
         changing = true;

@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 
 public class HUDManager : MonoBehaviour
 {
-    public static HUDManager Instance { get; private set; } //reference to this script
+    public static HUDManager Instance { get; private set; } //Singleton allows other scripts to access HUDManager.Instance
     //Awake when script is created
     [SerializeField] private DayManager dayManager;
 
@@ -62,18 +62,21 @@ public class HUDManager : MonoBehaviour
     }
 
     //show the clock UI when player looks at a clock object
+    //sets showClock to trigger the fade-in
     public void ShowClock()
     {
         showClock = true;
     }
 
     //hide clock UI when player looks away from clock object
+    //Sets ShowClock to false to trigger the fade-out
     public void HideClock()
     {
         showClock = false;
     }
 
-    //update the time that is displayed on the clock UI
+    //gets the current formatted time from the GameClock singleton
+    //and updates the time that is displayed on the clock UI
     void UpdateClockUI()
     {
         if (ClockPanel.activeSelf && GameClock.Instance != null)

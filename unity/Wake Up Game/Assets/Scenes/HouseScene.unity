@@ -34411,6 +34411,7 @@ GameObject:
   - component: {fileID: 4390248280836894499}
   - component: {fileID: 7872256731165332319}
   - component: {fileID: 7872256731165332320}
+  - component: {fileID: 7872256731165332321}
   m_Layer: 0
   m_Name: BedMattress
   m_TagString: Untagged
@@ -35303,6 +35304,7 @@ GameObject:
   - component: {fileID: 1195264806705114197}
   - component: {fileID: 792258607543166678}
   - component: {fileID: 9115448553075563781}
+  - component: {fileID: 9115448553075563782}
   m_Layer: 0
   m_Name: BedPillows
   m_TagString: Untagged
@@ -36837,7 +36839,7 @@ Transform:
   m_GameObject: {fileID: 4061714159636249507}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.355, y: -1.4095018, z: -7.6387796}
+  m_LocalPosition: {x: 2.374, y: -1.4095018, z: -7.6387796}
   m_LocalScale: {x: 1.4946544, y: 1.1061, z: 1.5977618}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -37313,7 +37315,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3681071672011170073}
   - component: {fileID: 4061714159636249508}
-  - component: {fileID: 4061714159636249509}
   m_Layer: 0
   m_Name: Bedroom_DoubleBed
   m_TagString: Untagged
@@ -37331,30 +37332,18 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &4061714159636249509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4061714159636249507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d06e320114db4643b4d255e12d47273, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bed
 --- !u!1 &4068846141239131490
 GameObject:
   m_ObjectHideFlags: 0
@@ -42943,6 +42932,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4462801078777286609, guid: c6c5cef0172c5b043b8b1c555266db84, type: 3}
+--- !u!114 &7872256731165332321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844632214462557338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d06e320114db4643b4d255e12d47273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bed
 --- !u!4 &7915565932451778581
 Transform:
   m_ObjectHideFlags: 0
@@ -43081,6 +43082,8 @@ GameObject:
   - component: {fileID: 3862929796274367768}
   - component: {fileID: 5767384268921014329}
   - component: {fileID: 7934916810807189000}
+  - component: {fileID: 7934916810807189001}
+  - component: {fileID: 7934916810807189002}
   m_Layer: 0
   m_Name: BedBlanket
   m_TagString: Untagged
@@ -43110,6 +43113,39 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6332815877329250514, guid: c6c5cef0172c5b043b8b1c555266db84, type: 3}
+--- !u!114 &7934916810807189001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7934916810807188999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d06e320114db4643b4d255e12d47273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bed
+--- !u!65 &7934916810807189002
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7934916810807188999}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.014779999, y: 0.016099997, z: 0.0018999996}
+  m_Center: {x: 0, y: -0.0019700113, z: 0.004969997}
 --- !u!33 &7955498284873370710
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -44596,6 +44632,8 @@ GameObject:
   - component: {fileID: 8342701065548547052}
   - component: {fileID: 4225797365885532958}
   - component: {fileID: 8596023073152228522}
+  - component: {fileID: 8596023073152228523}
+  - component: {fileID: 8596023073152228524}
   m_Layer: 0
   m_Name: BedFrame
   m_TagString: Untagged
@@ -44625,6 +44663,39 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6526245878398251178, guid: c6c5cef0172c5b043b8b1c555266db84, type: 3}
+--- !u!114 &8596023073152228523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8596023073152228521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d06e320114db4643b4d255e12d47273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bed
+--- !u!65 &8596023073152228524
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8596023073152228521}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.014999999, y: 0.020339996, z: 0.010199997}
+  m_Center: {x: 0, y: -0.000000011175871, z: 0.0050999965}
 --- !u!33 &8629810230185856843
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -45678,6 +45749,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -843959443512925692, guid: c6c5cef0172c5b043b8b1c555266db84, type: 3}
+--- !u!114 &9115448553075563782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2696569868211314588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d06e320114db4643b4d255e12d47273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bed
 --- !u!1 &9128478936643453090
 GameObject:
   m_ObjectHideFlags: 0

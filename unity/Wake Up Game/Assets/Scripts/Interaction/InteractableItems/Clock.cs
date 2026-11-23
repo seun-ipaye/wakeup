@@ -1,7 +1,9 @@
 using UnityEngine;
 using TMPro;
 
-//display the time of the GameClock on a UI element when the player interacts with it
+/// <summary>
+/// display the time of the GameClock on a UI element when the player interacts with it
+/// </summary>
 public class Clock : MonoBehaviour
 {
     public GameObject timeDisplay;
