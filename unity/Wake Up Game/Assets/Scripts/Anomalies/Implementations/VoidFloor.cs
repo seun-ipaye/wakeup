@@ -1,7 +1,6 @@
 using UnityEngine;
 
-//this is the base class for all anomalies
-//each anomaly should inherit from this class and implement the activate/deactivate methods
+//VoidFloor anomaly, replaces living room and kitchen floor with a black floor
 
 public class VoidFloor : Anomaly {
     [Header("Anomaly Info")]

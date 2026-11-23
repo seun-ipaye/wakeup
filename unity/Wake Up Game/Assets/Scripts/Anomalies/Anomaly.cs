@@ -1,18 +1,22 @@
 using UnityEngine;
 
-//this is the base class for all anomalies
-//each anomaly should inherit from this class and implement the activate/deactivate methods
+/// <summary>
+/// this is the abstract base class for all anomalies
+/// </summary>
+///each anomaly should inherit from this class and implement the activate/deactivate methods
 
 public abstract class Anomaly : MonoBehaviour
 {
     [Header("Anomaly Info")]
-    public string anomalyName;
-    public int tier = 1;
+    public string anomalyName; ///Name used to identify the anomaly
+    public int tier = 1; ///Difficulty tier of the anomaly, default is 1
 
-    //when anomaly is selected
+    ///Activates the anomaly's effects when selected
     public abstract void Activate();
 
-    //when anomaly is not selected
+    /// <summary>
+    /// Deactivates the anomaly's effects when not selected
+    /// </summary>
     public virtual void Deactivate()
     {
     }

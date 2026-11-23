@@ -1,6 +1,8 @@
 using UnityEngine;
 
-//identifies objects as a clock
+/// <summary>
+/// identifies objects as a clock
+/// </summary>
 
 public class ClockInteractable : MonoBehaviour
 {

@@ -1,20 +1,22 @@
 using UnityEngine;
 
-//move the hands of an anolog clock object based on the current time of the GameClock
+///move the hands of an anolog clock object based on the current time of the GameClock
 
 public class AnalogClock : MonoBehaviour
-{
+{   
+    ///references to the clock's hour and minute hand objects
     public Transform hourHand;
     public Transform minuteHand;
 
-    //set these depending on how your model is oriented
+    ///sacis the hands rotate around, depending on model orientation
     public Vector3 rotationAxis = Vector3.forward;
 
-    //if the clock hands should move backwards (anomaly)
+    ///When true the clock hands should move backwards (anomaly)
     public bool reverseHands = false;
 
     private void Update()
-    {
+    {   
+        ///use the gameclock singleton to get the current gametime
         if (GameClock.Instance == null)
             return;
 
@@ -22,13 +24,15 @@ public class AnalogClock : MonoBehaviour
         int minute = GameClock.Instance.CurrentMinute;
 
 
-        //calculate hand rotation
+        ///calculate hand rotation based on hours and minutes
+        ///minute hand moves 6 degress per minute
         float minuteAngle = minute * 6f;
 
+        ///hour hand moves 30 degrees per hour plus 0.5 degrees for each minute
         float hourAngle = (hour % 12) * 30f + minute * 0.5f;
 
 
-        //reverse the rotation of hands when anomaly is active
+        ///reverse the rotation of hands when anomaly is active
         if (reverseHands)
         {
             minuteAngle = -minuteAngle;
@@ -36,7 +40,7 @@ public class AnalogClock : MonoBehaviour
         }
 
 
-        //rotate the hands
+        ///rotate the hands
         minuteHand.localRotation = Quaternion.AngleAxis(minuteAngle, rotationAxis);
 
         hourHand.localRotation = Quaternion.AngleAxis(hourAngle, rotationAxis);

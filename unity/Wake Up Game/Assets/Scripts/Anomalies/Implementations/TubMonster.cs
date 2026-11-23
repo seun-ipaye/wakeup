@@ -1,6 +1,7 @@
 using UnityEngine;
 
 //control the Tub Monster anomaly
+//Adds a tubmonster behind the showcurtain in the bathroom when activated
 
 public class TubMonster : Anomaly
 {

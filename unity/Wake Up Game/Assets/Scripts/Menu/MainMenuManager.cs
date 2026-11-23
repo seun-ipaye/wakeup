@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    //story mode
+    //Sets GameModeManager to Story mode and loads HouseScene
     public void StartStoryMode()
     {
         GameModeManager.Instance.currentMode = GameMode.Story;
@@ -14,7 +14,7 @@ public class MainMenuManager : MonoBehaviour
         Debug.Log("Story mode started");
     }
 
-    //hardcore mode
+    //Sets GameModeManager to Hardcore mode and loads HouseScene
     public void StartHardcoreMode()
     {
         GameModeManager.Instance.currentMode = GameMode.Hardcore;
@@ -23,7 +23,7 @@ public class MainMenuManager : MonoBehaviour
         Debug.Log("Hardcore mode started");
     }
 
-    //close the game with quit button
+    //Quits the application when the quit button is pressed
     public void QuitGame()
     {
         Application.Quit();

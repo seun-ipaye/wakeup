@@ -2,10 +2,15 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+
+//Detects interactable objects in front of the player using raycasting
+//Requires colliders on objects and InteractableInterface for interactions
 public class Interactor : MonoBehaviour
-{
+{   
+    //Max distance in Unity units the player can interact with objects
     public float interactDistance = 2f;
 
+    //References the currently detected interactable object and clock
     private InteractableInterface current;
     private ClockInteractable currentClock;
     private float hover;
@@ -15,19 +20,22 @@ public class Interactor : MonoBehaviour
     private Text label;
     private RectTransform key;
 
+    //Creates the interaction prompt and crosshair UI when the game starts
     void Start()
     {
         BuildHud();
     }
 
+    
     void Update()
     {
         current = null;
         currentClock = null;
 
+        //Casts a ray forward to find an object within interaction distance
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, interactDistance))
         {
-            current = hit.collider.GetComponentInParent<InteractableInterface>();
+            current = hit.collider.GetComponentInParent<InteractableInterface>(); //Selects the object's InteractableInterface if interaction is allowed
             currentClock = hit.collider.GetComponentInParent<ClockInteractable>();
         }
 
@@ -43,6 +51,7 @@ public class Interactor : MonoBehaviour
                 HUDManager.Instance.HideClock();
         }
 
+        //Pressing E interacts with the selected object
         if (current != null && !SleepFader.Busy && Keyboard.current.eKey.wasPressedThisFrame) {
             if (ThoughtUI.Instance != null && ThoughtUI.Instance.IsShowing)
                 return;
@@ -56,12 +65,14 @@ public class Interactor : MonoBehaviour
             key.anchoredPosition = new Vector2(-label.preferredWidth / 2f - 6f, 0f);
         }
 
+        //Disables interactions during sleep transitions of active thoughts
         bool show = current != null && !SleepFader.Busy;
         hover = Mathf.MoveTowards(hover, show ? 1f : 0f, 8f * Time.deltaTime);
         ring.color = new Color(1f, 1f, 1f, hover);
         prompt.alpha = hover;
     }
 
+    //Creates the interaction HUD, including the crosshair and E-key prompt
     void BuildHud()
     {
         var canvas = new GameObject("InteractionHUD").AddComponent<Canvas>();

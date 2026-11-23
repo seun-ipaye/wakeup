@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class SleepFader : MonoBehaviour
 {
     static SleepFader instance;
-    public static bool Busy;
+    public static bool Busy; //Prevents multiple sleep transitions from running at once
     float alpha;
     float open = 1;
     Texture2D black;
@@ -17,6 +17,7 @@ public class SleepFader : MonoBehaviour
     float textAlpha;
     GUIStyle textStyle;
 
+    //starts the sleep transition by fading the screen to black
     public static void Sleep(Action onBlack)
     {
         if (Busy) return;
