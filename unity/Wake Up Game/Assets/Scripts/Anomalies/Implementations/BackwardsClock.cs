@@ -1,7 +1,12 @@
 using UnityEngine;
 
+
+/// <summary>
 ///the Backwards Clock anomaly, makes hands move in reverse
 ///The clock counts backwards in time when activated
+/// </summary>
+
+
 
 public class BackwardsClock : Anomaly
 {

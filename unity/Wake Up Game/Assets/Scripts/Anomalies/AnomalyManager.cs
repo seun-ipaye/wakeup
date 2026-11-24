@@ -1,5 +1,10 @@
 using UnityEngine;
 
+
+/// <summary>
+/// Decides each morning whether there is an anomaly and how subtle it is
+/// </summary>
+
 ///Configures Story Mode anomalies for each day
 [System.Serializable]
 public class StoryDayAnomalies {
@@ -11,7 +16,7 @@ public class StoryDayAnomalies {
     public Anomaly[] anomalies; //Pool of anomalies available for selection
 }
 
-/// Decides each morning whether there is an anomaly and how subtle it is
+
 public class AnomalyManager : MonoBehaviour
 {
     public static AnomalyManager Instance { get; private set; } //Singleton allows other scripts to access AnomalyManager.Instance

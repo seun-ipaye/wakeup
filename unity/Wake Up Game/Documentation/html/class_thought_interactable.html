@@ -111,23 +111,27 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_thought_
   <div class="headertitle"><div class="title">ThoughtInteractable Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>for objects that trigger inner thought when interacted with  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ThoughtInteractable:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_thought_interactable.png" usemap="#ThoughtInteractable_map" alt=""/>
   <map id="ThoughtInteractable_map" name="ThoughtInteractable_map">
-<area href="interface_interactable_interface.html" alt="InteractableInterface" shape="rect" coords="138,0,266,24"/>
+<area href="interface_interactable_interface.html" title="Anything the player can press E on implements this an interface other interactable objects can implem..." alt="InteractableInterface" shape="rect" coords="138,0,266,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:DailyThought" id="r_DailyThought"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_thought_interactable_1_1_daily_thought.html">DailyThought</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">store thoughts for specific days  <a href="class_thought_interactable_1_1_daily_thought.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a94c6db96179d3ce62ac98b9e6d020787" id="r_a94c6db96179d3ce62ac98b9e6d020787"><td class="memItemLeft"><a id="a94c6db96179d3ce62ac98b9e6d020787" name="a94c6db96179d3ce62ac98b9e6d020787"></a>enum &#160;</td><td class="memItemRight"><b>StoryDay</b> { <br />
+<tr class="memitem:a94c6db96179d3ce62ac98b9e6d020787" id="r_a94c6db96179d3ce62ac98b9e6d020787"><td class="memItemLeft"><a id="a94c6db96179d3ce62ac98b9e6d020787" name="a94c6db96179d3ce62ac98b9e6d020787"></a>enum &#160;</td><td class="memItemRight"><a class="el" href="#a94c6db96179d3ce62ac98b9e6d020787">StoryDay</a> { <br />
 &#160;&#160;<b>Monday</b> = 1
 , <b>Tuesday</b> = 2
 , <b>Wednesday</b> = 3
@@ -136,15 +140,18 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>Friday</b> = 5
 <br />
  }</td></tr>
+<tr class="memdesc:a94c6db96179d3ce62ac98b9e6d020787"><td class="mdescLeft">&#160;</td><td class="mdescRight">days of the week <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aace91b8bd156d20a84d53c5641f79974" id="r_aace91b8bd156d20a84d53c5641f79974"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aace91b8bd156d20a84d53c5641f79974">Interact</a> ()</td></tr>
+<tr class="memdesc:aace91b8bd156d20a84d53c5641f79974"><td class="mdescLeft">&#160;</td><td class="mdescRight">interact to display thought for the day  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a9dd317bba84fb414dcd70ac8978e49bd" id="r_a9dd317bba84fb414dcd70ac8978e49bd"><td class="memItemLeft"><a id="a9dd317bba84fb414dcd70ac8978e49bd" name="a9dd317bba84fb414dcd70ac8978e49bd"></a>
 static void&#160;</td><td class="memItemRight"><b>ResetThoughtHistory</b> ()</td></tr>
+<tr class="memdesc:a9dd317bba84fb414dcd70ac8978e49bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear the thought history when starting a new week <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -158,9 +165,13 @@ float&#160;</td><td class="memItemRight"><b>displayDuration</b> = 4f</td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a075ad904e2d3a23b4bd1019bf4ce7228" id="r_a075ad904e2d3a23b4bd1019bf4ce7228"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a075ad904e2d3a23b4bd1019bf4ce7228">Prompt</a><code> [get]</code></td></tr>
+<tr class="memdesc:a075ad904e2d3a23b4bd1019bf4ce7228"><td class="mdescLeft">&#160;</td><td class="mdescRight">prompt when looking at object  <br /></td></tr>
 <tr class="memitem:a48772741f09cc84dfef4cd0be802f7c2" id="r_a48772741f09cc84dfef4cd0be802f7c2"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a48772741f09cc84dfef4cd0be802f7c2">CanInteract</a><code> [get]</code></td></tr>
+<tr class="memdesc:a48772741f09cc84dfef4cd0be802f7c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">ensure there is a thought assigned before allowing interaction and it has not already been interacted with this day  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>for objects that trigger inner thought when interacted with </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="aace91b8bd156d20a84d53c5641f79974" name="aace91b8bd156d20a84d53c5641f79974"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aace91b8bd156d20a84d53c5641f79974">&#9670;&#160;</a></span>Interact()</h2>
 
@@ -176,7 +187,10 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="interface_interactable_interface.html">InteractableInterface</a>.</p>
+<p>interact to display thought for the day </p>
+<p>mark object as examined for current day</p>
+
+<p>Implements <a class="el" href="interface_interactable_interface.html#af19a92411fd460f8f13194fac4362727">InteractableInterface</a>.</p>
 
 </div>
 </div>
@@ -200,6 +214,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>ensure there is a thought assigned before allowing interaction and it has not already been interacted with this day </p>
 
 <p>Implements <a class="el" href="interface_interactable_interface.html">InteractableInterface</a>.</p>
 
@@ -225,7 +241,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="interface_interactable_interface.html">InteractableInterface</a>.</p>
+<p>prompt when looking at object </p>
+
+<p>Implements <a class="el" href="interface_interactable_interface.html#a767ddf428bdcc7461249b29177e64f99">InteractableInterface</a>.</p>
 
 </div>
 </div>

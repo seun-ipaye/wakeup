@@ -1,5 +1,7 @@
 using UnityEngine;
-
+/// <summary>
+/// An interactable that will allow the player to open and close a drawer
+/// </summary>
 public class Drawer : MonoBehaviour, InteractableInterface
 {
     public string Prompt => isOpen ? "Close Drawer" : "Open Drawer";           
@@ -13,6 +15,11 @@ public class Drawer : MonoBehaviour, InteractableInterface
     private AnimationClip openClip;
     private GameObject animatedObject;
 
+
+    /// <summary>
+    /// Play animation when drawer is selected by the player
+    /// Will open or close the drawer
+    /// </summary>
     void Awake()
     {
         Animator animator = GetComponentInChildren<Animator>();

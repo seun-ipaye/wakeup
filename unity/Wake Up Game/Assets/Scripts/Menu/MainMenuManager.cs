@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//handles buttons on main menu
+/// <summary>
+/// handles buttons on main menu
+/// </summary>
 
 public class MainMenuManager : MonoBehaviour
 {
-    //Sets GameModeManager to Story mode and loads HouseScene
+    /// <summary>
+    /// Sets GameModeManager to Story mode and loads HouseScene
+    /// </summary>
     public void StartStoryMode()
     {
         GameModeManager.Instance.currentMode = GameMode.Story;
@@ -14,7 +18,9 @@ public class MainMenuManager : MonoBehaviour
         Debug.Log("Story mode started");
     }
 
-    //Sets GameModeManager to Hardcore mode and loads HouseScene
+    /// <summary>
+    /// Sets GameModeManager to Hardcore mode and loads HouseScene
+    /// </summary>
     public void StartHardcoreMode()
     {
         GameModeManager.Instance.currentMode = GameMode.Hardcore;
@@ -23,7 +29,9 @@ public class MainMenuManager : MonoBehaviour
         Debug.Log("Hardcore mode started");
     }
 
-    //Quits the application when the quit button is pressed
+    /// <summary>
+    /// Quits the application when the quit button is pressed
+    /// </summary>
     public void QuitGame()
     {
         Application.Quit();

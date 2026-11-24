@@ -111,6 +111,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_player_c
   <div class="headertitle"><div class="title">PlayerController Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>First person player controller. (W/A/S/D walk, no sprint or jump) Requires a CharacterController for player movement and collision Uses Unity's Input System for keyboard and mouse controls.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for PlayerController:</div>
 <div class="dyncontent">
@@ -122,18 +125,26 @@ Inheritance diagram for PlayerController:</div>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ac0bd515cd8d560dab94cb95c1cbe7d42" id="r_ac0bd515cd8d560dab94cb95c1cbe7d42"><td class="memItemLeft"><a id="ac0bd515cd8d560dab94cb95c1cbe7d42" name="ac0bd515cd8d560dab94cb95c1cbe7d42"></a>
 float&#160;</td><td class="memItemRight"><b>walkSpeed</b> = 2.5f</td></tr>
+<tr class="memdesc:ac0bd515cd8d560dab94cb95c1cbe7d42"><td class="mdescLeft">&#160;</td><td class="mdescRight">walking speed in meters per second <br /></td></tr>
 <tr class="memitem:a0a8e0eb9de4ccc5bd5f4cc5b44469b01" id="r_a0a8e0eb9de4ccc5bd5f4cc5b44469b01"><td class="memItemLeft"><a id="a0a8e0eb9de4ccc5bd5f4cc5b44469b01" name="a0a8e0eb9de4ccc5bd5f4cc5b44469b01"></a>
 float&#160;</td><td class="memItemRight"><b>gravity</b> = -9.81f</td></tr>
+<tr class="memdesc:a0a8e0eb9de4ccc5bd5f4cc5b44469b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">downward acceleration applied to the player <br /></td></tr>
 <tr class="memitem:afd5f9e06691272d7e6dac76e44831cb8" id="r_afd5f9e06691272d7e6dac76e44831cb8"><td class="memItemLeft"><a id="afd5f9e06691272d7e6dac76e44831cb8" name="afd5f9e06691272d7e6dac76e44831cb8"></a>
 Camera&#160;</td><td class="memItemRight"><b>playerCamera</b></td></tr>
+<tr class="memdesc:afd5f9e06691272d7e6dac76e44831cb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the first-person camera. <br /></td></tr>
 <tr class="memitem:a852d4d1b29c043a6e85e4828032f1534" id="r_a852d4d1b29c043a6e85e4828032f1534"><td class="memItemLeft"><a id="a852d4d1b29c043a6e85e4828032f1534" name="a852d4d1b29c043a6e85e4828032f1534"></a>
 float&#160;</td><td class="memItemRight"><b>mouseSensitivity</b> = 0.1f</td></tr>
+<tr class="memdesc:a852d4d1b29c043a6e85e4828032f1534"><td class="mdescLeft">&#160;</td><td class="mdescRight">controls how quickly the camera rotates with mouse movement <br /></td></tr>
 <tr class="memitem:a4149a29349209ae8f62160195cbcbcc9" id="r_a4149a29349209ae8f62160195cbcbcc9"><td class="memItemLeft"><a id="a4149a29349209ae8f62160195cbcbcc9" name="a4149a29349209ae8f62160195cbcbcc9"></a>
 float&#160;</td><td class="memItemRight"><b>maxPitch</b> = 80f</td></tr>
+<tr class="memdesc:a4149a29349209ae8f62160195cbcbcc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">maximum vertical camera angle to prevent looking too far up or down <br /></td></tr>
 <tr class="memitem:afbd31b5b3f2a9196177ebe8f8f281eed" id="r_afbd31b5b3f2a9196177ebe8f8f281eed"><td class="memItemLeft"><a id="afbd31b5b3f2a9196177ebe8f8f281eed" name="afbd31b5b3f2a9196177ebe8f8f281eed"></a>
 float&#160;</td><td class="memItemRight"><b>fieldOfView</b> = 60f</td></tr>
+<tr class="memdesc:afbd31b5b3f2a9196177ebe8f8f281eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">camera field of view applied when the game starts <br /></td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>First person player controller. (W/A/S/D walk, no sprint or jump) Requires a CharacterController for player movement and collision Uses Unity's Input System for keyboard and mouse controls. </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>C:/Users/jessi/Documents/UnityProjects/wakeup/unity/Wake Up Game/Assets/Scripts/Player/<b>PlayerController.cs</b></li>
 </ul>
 </div><!-- contents -->

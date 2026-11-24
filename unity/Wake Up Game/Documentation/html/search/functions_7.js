@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['resetclock_0',['ResetClock',['../class_game_clock.html#a37fc45e413c9e91b3d55e4633038bc21',1,'GameClock']]],
-  ['resetstoryselection_1',['ResetStorySelection',['../class_anomaly_manager.html#af232a82a31d53221ccf067f72924645b',1,'AnomalyManager']]],
-  ['resetusedanomalies_2',['ResetUsedAnomalies',['../class_anomaly_manager.html#a1b6f298b4742931f5c345647f71cad37',1,'AnomalyManager']]],
-  ['resetweek_3',['ResetWeek',['../class_day_manager.html#a13d9f154cb70bf1e182654b809f1bacf',1,'DayManager']]],
-  ['restartfromcheckpoint_4',['RestartFromCheckpoint',['../class_day_manager.html#af71344b2949da69152792b6a708ec575',1,'DayManager']]]
+  ['interact_0',['Interact',['../interface_interactable_interface.html#af19a92411fd460f8f13194fac4362727',1,'InteractableInterface.Interact()'],['../class_bed.html#afce7fe1bda9ad9905a9c8850f581c439',1,'Bed.Interact()'],['../class_drawer.html#ae9b260dc7b7cb60899fefc3c7c3114c9',1,'Drawer.Interact()'],['../class_front_door.html#a8dfd5ab6c29621fb337fd5ca404f4d92',1,'FrontDoor.Interact()'],['../class_interior_door.html#a733ff1a60934e8da8b74f980913e23db',1,'InteriorDoor.Interact()'],['../class_light_switch.html#a7942a76d5669a94f179403a45eeb069d',1,'LightSwitch.Interact()'],['../class_task_interactable.html#a358718fd00ca5f38d83a312ccb6e1bce',1,'TaskInteractable.Interact()'],['../class_thought_interactable.html#aace91b8bd156d20a84d53c5641f79974',1,'ThoughtInteractable.Interact()'],['../class_toilet_interact.html#a298f86d8c0e08546203fe7421fb8a7c5',1,'ToiletInteract.Interact()']]],
+  ['istoday_1',['IsToday',['../class_task_manager.html#a1c9036d4661b389047eb8487e550e775',1,'TaskManager']]]
 ];

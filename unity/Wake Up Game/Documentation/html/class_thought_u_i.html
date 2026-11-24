@@ -111,6 +111,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_thought_
   <div class="headertitle"><div class="title">ThoughtUI Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>controls display of inner thought dialogue  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ThoughtUI:</div>
 <div class="dyncontent">
@@ -120,33 +123,69 @@ Inheritance diagram for ThoughtUI:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4012e375c1bb5eade590288e63f14536" id="r_a4012e375c1bb5eade590288e63f14536"><td class="memItemLeft"><a id="a4012e375c1bb5eade590288e63f14536" name="a4012e375c1bb5eade590288e63f14536"></a>
-void&#160;</td><td class="memItemRight"><b>ShowThought</b> (string message, float duration)</td></tr>
+<tr class="memitem:a4012e375c1bb5eade590288e63f14536" id="r_a4012e375c1bb5eade590288e63f14536"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4012e375c1bb5eade590288e63f14536">ShowThought</a> (string message, float duration)</td></tr>
+<tr class="memdesc:a4012e375c1bb5eade590288e63f14536"><td class="mdescLeft">&#160;</td><td class="mdescRight">display thought  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a9d964707e32bbb61248ccf70af87c8a5" id="r_a9d964707e32bbb61248ccf70af87c8a5"><td class="memItemLeft"><a id="a9d964707e32bbb61248ccf70af87c8a5" name="a9d964707e32bbb61248ccf70af87c8a5"></a>
 Canvas&#160;</td><td class="memItemRight"><b>thoughtCanvas</b></td></tr>
+<tr class="memdesc:a9d964707e32bbb61248ccf70af87c8a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Canvas cointaining the thought UI. <br /></td></tr>
 <tr class="memitem:a7bbd2d82231bbf35bc27a82d9f81f75c" id="r_a7bbd2d82231bbf35bc27a82d9f81f75c"><td class="memItemLeft"><a id="a7bbd2d82231bbf35bc27a82d9f81f75c" name="a7bbd2d82231bbf35bc27a82d9f81f75c"></a>
 CanvasGroup&#160;</td><td class="memItemRight"><b>thoughtPanel</b></td></tr>
+<tr class="memdesc:a7bbd2d82231bbf35bc27a82d9f81f75c"><td class="mdescLeft">&#160;</td><td class="mdescRight">controls the transparency of the thought panel <br /></td></tr>
 <tr class="memitem:a309ea05c237351743d7efb3d31b6b963" id="r_a309ea05c237351743d7efb3d31b6b963"><td class="memItemLeft"><a id="a309ea05c237351743d7efb3d31b6b963" name="a309ea05c237351743d7efb3d31b6b963"></a>
 Text&#160;</td><td class="memItemRight"><b>thoughtText</b></td></tr>
+<tr class="memdesc:a309ea05c237351743d7efb3d31b6b963"><td class="mdescLeft">&#160;</td><td class="mdescRight">text component that displays the thought message <br /></td></tr>
 <tr class="memitem:a1f8f0e281091a11ce68b824b40af9baf" id="r_a1f8f0e281091a11ce68b824b40af9baf"><td class="memItemLeft"><a id="a1f8f0e281091a11ce68b824b40af9baf" name="a1f8f0e281091a11ce68b824b40af9baf"></a>
 Camera&#160;</td><td class="memItemRight"><b>playerCamera</b></td></tr>
+<tr class="memdesc:a1f8f0e281091a11ce68b824b40af9baf"><td class="mdescLeft">&#160;</td><td class="mdescRight">access the players camera that will zoom in on the thought <br /></td></tr>
 <tr class="memitem:ae985381333b714fd7f84f639d91d8295" id="r_ae985381333b714fd7f84f639d91d8295"><td class="memItemLeft"><a id="ae985381333b714fd7f84f639d91d8295" name="ae985381333b714fd7f84f639d91d8295"></a>
 float&#160;</td><td class="memItemRight"><b>fadeDuration</b> = 0.3f</td></tr>
+<tr class="memdesc:ae985381333b714fd7f84f639d91d8295"><td class="mdescLeft">&#160;</td><td class="mdescRight">fadeDuration is the time it takes for the thought fade in and out, displayyDuration is the time setting for displaying thoughts <br /></td></tr>
 <tr class="memitem:a9e6f5b154c75b8f8ed5d853559481e71" id="r_a9e6f5b154c75b8f8ed5d853559481e71"><td class="memItemLeft"><a id="a9e6f5b154c75b8f8ed5d853559481e71" name="a9e6f5b154c75b8f8ed5d853559481e71"></a>
 float&#160;</td><td class="memItemRight"><b>displayDuration</b> = 4f</td></tr>
 <tr class="memitem:a88db84b93f255e7afd2e814842d1784a" id="r_a88db84b93f255e7afd2e814842d1784a"><td class="memItemLeft"><a id="a88db84b93f255e7afd2e814842d1784a" name="a88db84b93f255e7afd2e814842d1784a"></a>
 float&#160;</td><td class="memItemRight"><b>zoomAmount</b> = 5f</td></tr>
+<tr class="memdesc:a88db84b93f255e7afd2e814842d1784a"><td class="mdescLeft">&#160;</td><td class="mdescRight">controls the camera's zoom effect by reducing the field of view <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a1e362e3242b0f838ed3d7c2c5aa9b593" id="r_a1e362e3242b0f838ed3d7c2c5aa9b593"><td class="memItemLeft"><a id="a1e362e3242b0f838ed3d7c2c5aa9b593" name="a1e362e3242b0f838ed3d7c2c5aa9b593"></a>
 static <a class="el" href="class_thought_u_i.html">ThoughtUI</a>&#160;</td><td class="memItemRight"><b>Instance</b><code> [get]</code></td></tr>
+<tr class="memdesc:a1e362e3242b0f838ed3d7c2c5aa9b593"><td class="mdescLeft">&#160;</td><td class="mdescRight">allows other scripts to access the <a class="el" href="class_thought_u_i.html" title="controls display of inner thought dialogue">ThoughtUI</a> <br /></td></tr>
 <tr class="memitem:af4cf86ec4afea71e160e1192a6c3e08a" id="r_af4cf86ec4afea71e160e1192a6c3e08a"><td class="memItemLeft"><a id="af4cf86ec4afea71e160e1192a6c3e08a" name="af4cf86ec4afea71e160e1192a6c3e08a"></a>
 bool&#160;</td><td class="memItemRight"><b>IsShowing</b><code> [get]</code></td></tr>
+<tr class="memdesc:af4cf86ec4afea71e160e1192a6c3e08a"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if a thought is currently displaying <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>controls display of inner thought dialogue </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a4012e375c1bb5eade590288e63f14536" name="a4012e375c1bb5eade590288e63f14536"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4012e375c1bb5eade590288e63f14536">&#9670;&#160;</a></span>ShowThought()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ThoughtUI.ShowThought </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>duration</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>display thought </p>
+<p>stop previous thought if one is displaying</p>
+<p>start the coroutine that displays the new thought</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>C:/Users/jessi/Documents/UnityProjects/wakeup/unity/Wake Up Game/Assets/Scripts/UI/<b>ThoughtUI.cs</b></li>
 </ul>

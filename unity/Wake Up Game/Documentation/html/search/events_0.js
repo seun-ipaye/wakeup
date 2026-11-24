@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['daychanged_0',['DayChanged',['../class_day_manager.html#a562acc82fe3c96c56d4981abb9b18330',1,'DayManager']]]
+  ['alltaskscompleted_0',['AllTasksCompleted',['../class_task_manager.html#a1460fcdecba71e8872a3aca51adbff51',1,'TaskManager']]]
 ];

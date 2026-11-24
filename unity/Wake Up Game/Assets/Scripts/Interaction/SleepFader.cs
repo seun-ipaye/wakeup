@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+/// <summary>
+/// Fades out when the player goes to sleep
+/// </summary>
 public class SleepFader : MonoBehaviour
 {
     static SleepFader instance;
-    public static bool Busy; //Prevents multiple sleep transitions from running at once
+    ///Prevents multiple sleep transitions from running at once
+    public static bool Busy; 
     float alpha;
     float open = 1;
     Texture2D black;
@@ -17,7 +20,7 @@ public class SleepFader : MonoBehaviour
     float textAlpha;
     GUIStyle textStyle;
 
-    //starts the sleep transition by fading the screen to black
+    ///starts the sleep transition by fading the screen to black
     public static void Sleep(Action onBlack)
     {
         if (Busy) return;
@@ -34,7 +37,7 @@ public class SleepFader : MonoBehaviour
         instance.StartCoroutine(instance.Run(onBlack));
     }
 
-    // call inside the Sleep callback to show text on the black screen before waking up
+    /// call inside the Sleep callback to show text on the black screen before waking up
     public static void ShowMessage(string text, bool stayBlack = false)
     {
         pendingMessage = text;

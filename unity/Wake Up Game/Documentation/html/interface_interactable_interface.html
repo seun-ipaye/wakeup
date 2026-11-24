@@ -111,35 +111,112 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('interface_inte
   <div class="headertitle"><div class="title">InteractableInterface Interface Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Anything the player can press E on implements this an interface other interactable objects can implement.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for InteractableInterface:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_interactable_interface.png" usemap="#InteractableInterface_map" alt=""/>
   <map id="InteractableInterface_map" name="InteractableInterface_map">
-<area href="class_bed.html" alt="Bed" shape="rect" coords="138,56,266,80"/>
-<area href="class_drawer.html" alt="Drawer" shape="rect" coords="138,112,266,136"/>
+<area href="class_bed.html" title="A script that determines this asset will handle the go back to bed logic for the DayManager script." alt="Bed" shape="rect" coords="138,56,266,80"/>
+<area href="class_drawer.html" title="An interactable that will allow the player to open and close a drawer." alt="Drawer" shape="rect" coords="138,112,266,136"/>
 <area href="class_front_door.html" title="The front door: leave for work." alt="FrontDoor" shape="rect" coords="138,168,266,192"/>
-<area href="class_interior_door.html" alt="InteriorDoor" shape="rect" coords="138,224,266,248"/>
-<area href="class_light_switch.html" alt="LightSwitch" shape="rect" coords="138,280,266,304"/>
-<area href="class_task_interactable.html" alt="TaskInteractable" shape="rect" coords="138,336,266,360"/>
-<area href="class_thought_interactable.html" alt="ThoughtInteractable" shape="rect" coords="138,392,266,416"/>
-<area href="class_toilet_interact.html" alt="ToiletInteract" shape="rect" coords="138,448,266,472"/>
+<area href="class_interior_door.html" title="Interior doors: open/close animation upon interaction uses interactableInterface." alt="InteriorDoor" shape="rect" coords="138,224,266,248"/>
+<area href="class_light_switch.html" title="A light switch the player can toggle with E." alt="LightSwitch" shape="rect" coords="138,280,266,304"/>
+<area href="class_task_interactable.html" title="Makes a task interactable." alt="TaskInteractable" shape="rect" coords="138,336,266,360"/>
+<area href="class_thought_interactable.html" title="for objects that trigger inner thought when interacted with" alt="ThoughtInteractable" shape="rect" coords="138,392,266,416"/>
+<area href="class_toilet_interact.html" title="links the Toiletcontroller to the InteractableInterface this is so the player can flush the toilet wh..." alt="ToiletInteract" shape="rect" coords="138,448,266,472"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af19a92411fd460f8f13194fac4362727" id="r_af19a92411fd460f8f13194fac4362727"><td class="memItemLeft"><a id="af19a92411fd460f8f13194fac4362727" name="af19a92411fd460f8f13194fac4362727"></a>
-void&#160;</td><td class="memItemRight"><b>Interact</b> ()</td></tr>
+<tr class="memitem:af19a92411fd460f8f13194fac4362727" id="r_af19a92411fd460f8f13194fac4362727"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af19a92411fd460f8f13194fac4362727">Interact</a> ()</td></tr>
+<tr class="memdesc:af19a92411fd460f8f13194fac4362727"><td class="mdescLeft">&#160;</td><td class="mdescRight">called once when the player presses E  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a767ddf428bdcc7461249b29177e64f99" id="r_a767ddf428bdcc7461249b29177e64f99"><td class="memItemLeft"><a id="a767ddf428bdcc7461249b29177e64f99" name="a767ddf428bdcc7461249b29177e64f99"></a>
-string&#160;</td><td class="memItemRight"><b>Prompt</b><code> [get]</code></td></tr>
-<tr class="memitem:a78dac5ae8a1f5279cb237c7b0d6a271a" id="r_a78dac5ae8a1f5279cb237c7b0d6a271a"><td class="memItemLeft"><a id="a78dac5ae8a1f5279cb237c7b0d6a271a" name="a78dac5ae8a1f5279cb237c7b0d6a271a"></a>
-bool&#160;</td><td class="memItemRight"><b>CanInteract</b><code> [get]</code></td></tr>
+<tr class="memitem:a767ddf428bdcc7461249b29177e64f99" id="r_a767ddf428bdcc7461249b29177e64f99"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a767ddf428bdcc7461249b29177e64f99">Prompt</a><code> [get]</code></td></tr>
+<tr class="memdesc:a767ddf428bdcc7461249b29177e64f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">text shown on screen while looking at the object  <br /></td></tr>
+<tr class="memitem:a78dac5ae8a1f5279cb237c7b0d6a271a" id="r_a78dac5ae8a1f5279cb237c7b0d6a271a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a78dac5ae8a1f5279cb237c7b0d6a271a">CanInteract</a><code> [get]</code></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Anything the player can press E on implements this an interface other interactable objects can implement. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="af19a92411fd460f8f13194fac4362727" name="af19a92411fd460f8f13194fac4362727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af19a92411fd460f8f13194fac4362727">&#9670;&#160;</a></span>Interact()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InteractableInterface.Interact </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>called once when the player presses E </p>
+
+<p>Implemented in <a class="el" href="class_bed.html#afce7fe1bda9ad9905a9c8850f581c439">Bed</a>, <a class="el" href="class_drawer.html#ae9b260dc7b7cb60899fefc3c7c3114c9">Drawer</a>, <a class="el" href="class_front_door.html#a8dfd5ab6c29621fb337fd5ca404f4d92">FrontDoor</a>, <a class="el" href="class_interior_door.html#a733ff1a60934e8da8b74f980913e23db">InteriorDoor</a>, <a class="el" href="class_light_switch.html#a7942a76d5669a94f179403a45eeb069d">LightSwitch</a>, <a class="el" href="class_task_interactable.html#a358718fd00ca5f38d83a312ccb6e1bce">TaskInteractable</a>, <a class="el" href="class_thought_interactable.html#aace91b8bd156d20a84d53c5641f79974">ThoughtInteractable</a>, and <a class="el" href="class_toilet_interact.html#a298f86d8c0e08546203fe7421fb8a7c5">ToiletInteract</a>.</p>
+
+</div>
+</div>
+<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
+<a id="a78dac5ae8a1f5279cb237c7b0d6a271a" name="a78dac5ae8a1f5279cb237c7b0d6a271a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78dac5ae8a1f5279cb237c7b0d6a271a">&#9670;&#160;</a></span>CanInteract</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InteractableInterface.CanInteract</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_thought_interactable.html#a48772741f09cc84dfef4cd0be802f7c2">ThoughtInteractable</a>.</p>
+
+</div>
+</div>
+<a id="a767ddf428bdcc7461249b29177e64f99" name="a767ddf428bdcc7461249b29177e64f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a767ddf428bdcc7461249b29177e64f99">&#9670;&#160;</a></span>Prompt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string InteractableInterface.Prompt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>text shown on screen while looking at the object </p>
+
+<p>Implemented in <a class="el" href="class_bed.html#a9b658b8de5ca99de3f1371b76a11ed22">Bed</a>, <a class="el" href="class_drawer.html#a66b21a15e1db6a22541cec83984cd535">Drawer</a>, <a class="el" href="class_front_door.html#a0d4ed5822ffae4adfab4b7d4c2409ec1">FrontDoor</a>, <a class="el" href="class_interior_door.html#a6d0873920b59af6695630dc3cb1b54b1">InteriorDoor</a>, <a class="el" href="class_light_switch.html#a400e1915ff759bf6da0ac3d3a3f1491d">LightSwitch</a>, <a class="el" href="class_task_interactable.html#a796ef6faf0acb1400b7d6942a76cfa46">TaskInteractable</a>, <a class="el" href="class_thought_interactable.html#a075ad904e2d3a23b4bd1019bf4ce7228">ThoughtInteractable</a>, and <a class="el" href="class_toilet_interact.html#adba8df8fb785d6938612682e880aa42c">ToiletInteract</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
 <li>C:/Users/jessi/Documents/UnityProjects/wakeup/unity/Wake Up Game/Assets/Scripts/Interaction/<b>InteractableInterface.cs</b></li>
 </ul>

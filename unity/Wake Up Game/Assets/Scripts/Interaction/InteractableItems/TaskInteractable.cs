@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Makes a task interactable
+/// </summary>
+
 public class TaskInteractable : MonoBehaviour, InteractableInterface
 {
     [Tooltip("The task this object completes, e.g. \"Brush teeth\". Shown on the HUD")]

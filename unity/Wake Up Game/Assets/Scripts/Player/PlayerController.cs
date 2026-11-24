@@ -1,31 +1,44 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
- 
-// First person player controller. (W/A/S/D walk, no sprint or jump)
-//Requires a CharacterController for player movement and collision
-//Uses Unity's Input System for keyboard and mouse controls
+
+/// <summary>
+/// First person player controller. (W/A/S/D walk, no sprint or jump)
+/// Requires a CharacterController for player movement and collision
+///Uses Unity's Input System for keyboard and mouse controls
+/// </summary>
+
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     [Tooltip("Walking speed in mps (target: 2.5 m/s)")]
-    public float walkSpeed = 2.5f; //walking speed in meters per second
-    public float gravity = -9.81f; //downward acceleration applied to the player
+    ///walking speed in meters per second
+    public float walkSpeed = 2.5f;
+    /// <summary>
+    /// downward acceleration applied to the player
+    /// </summary>
+    public float gravity = -9.81f; 
  
     [Header("Look")]
     [Tooltip("The first-person camera")]
-    public Camera playerCamera; //Reference to the first-person camera
-    public float mouseSensitivity = 0.1f; //controls how quickly the camera rotates with mouse movement
+    ///Reference to the first-person camera
+    public Camera playerCamera;
+    ///controls how quickly the camera rotates with mouse movement
+    public float mouseSensitivity = 0.1f; 
     [Tooltip("How far up/down the player can look")]
-    public float maxPitch = 80f; //maximum vertical camera angle to prevent looking too far up or down
+    ///maximum vertical camera angle to prevent looking too far up or down
+    public float maxPitch = 80f; 
     [Tooltip("Camera field of view, set when the game starts")]
-    public float fieldOfView = 60f; //camera field of view applied when the game starts
+    ///camera field of view applied when the game starts
+    public float fieldOfView = 60f; 
  
     private CharacterController controller;
     private float pitch;
     private float verticalVelocity;
  
-    //References the CharacterController and finds the player camera if unassigned
+    /// <summary>
+    /// References the CharacterController and finds the player camera if unassigned
+    /// </summary>
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -33,15 +46,18 @@ public class PlayerController : MonoBehaviour
             playerCamera = GetComponentInChildren<Camera>();
     }
     
-    //Sets the camera FOV and locks the mouse cursor
+    ///Sets the camera FOV and locks the mouse cursor
     void Start()
     {
         playerCamera.fieldOfView = fieldOfView;
         LockCursor(true);
     }
-    
-    //Handles player input, camera movement, and walking 
-    //pauses controls while ThoughtUI is displaying
+
+    /// <summary>
+    /// Handles player input, camera movement, and walking 
+    /// pauses controls while ThoughtUI is displaying
+    /// </summary>
+
     void Update()
     {
         var keyboard = Keyboard.current;
@@ -61,7 +77,7 @@ public class PlayerController : MonoBehaviour
         Move(keyboard);
     }
     
-    //Rotates the player horizontally and camera vertically based on mouse movement
+    ///Rotates the player horizontally and camera vertically based on mouse movement
     void Look(Vector2 delta)
     {
         transform.Rotate(Vector3.up, delta.x * mouseSensitivity);
@@ -69,7 +85,7 @@ public class PlayerController : MonoBehaviour
         playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
     }
     
-    //Moves the player using WASD and applies gravity through CharacterController
+    ///Moves the player using WASD and applies gravity through CharacterController
     void Move(Keyboard keyboard)
     {
         Vector2 input = Vector2.zero;
@@ -89,7 +105,7 @@ public class PlayerController : MonoBehaviour
         controller.Move(move * Time.deltaTime);
     }
     
-    //Locks or unlocks the mouse cursor and controls its visibility
+    ///Locks or unlocks the mouse cursor and controls its visibility
     void LockCursor(bool locked)
     {
         Cursor.lockState = locked ? CursorLockMode.Locked : CursorLockMode.None;
