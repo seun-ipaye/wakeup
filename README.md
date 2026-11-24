@@ -1,14 +1,16 @@
 # Wake Up! -- Return 0; Interactive
 A COMP3770 Game Development Project from University of Windsor
 
-## Game Design Document & SharePoint
-[GDD File](https://uwin365.sharepoint.com/:b:/r/sites/COMP3770-1-R-2026F-Game07/Shared%20Documents/GDD_WakeUp_M1.pdf?d=w226707708f3c471c90d4ae81037b40cf&csf=1&web=1&e=ViZUkq)
+## Game Design Document, Technical Design Document, & SharePoint
+[GDD File](https://uwin365.sharepoint.com/:b:/r/sites/COMP3770-1-R-2026F-Game07/Shared%20Documents/GDD_WakeUp_M3.pdf?d=wa50cc061307548509b58fe50138acb1c&csf=1&web=1&e=y0C78Z)
+
+[TDD File](https://uwin365.sharepoint.com/:b:/r/sites/COMP3770-1-R-2026F-Game07/Shared%20Documents/TDD_WakeUp_M3.pdf?d=w009acef50d6447aaa76ea8472bf1c3b2&csf=1&web=1&e=8Wkp5j)
 
 [SharePoint](https://uwin365.sharepoint.com/sites/COMP3770-1-R-2026F-Game07/Shared%20Documents/)
 
 ## Vision
 Wake Up! is a 3D psychological horror game about completing a morning routine while identifying anomalies (strange occurrences) to determine whether the player is actually awake or still dreaming.
-The player must observe their surroundings, complete their morning tasks, and decide whether to continue their routine and leave for work or go back to bed. Making the wrong decision causes the player to lose and reset the work week, forcing them to try again.
+The player must observe their surroundings, complete their morning tasks, and decide whether to continue their routine and leave for work or go back to bed. By the end of the experience, the player should have a greater appreciation for how ordinary responsibilities can become stressful when combined with fatigue, guilt, uncertainty, and the fear of making the wrong decision.
 
 ## Parameters
 We picked five parameters that shape how Wake Up! feels to play, and each one has a target we can check in playtesting.
