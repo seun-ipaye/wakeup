@@ -1,11 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-//for objects that trigger inner thought when interacted with
+/// <summary>
+/// for objects that trigger inner thought when interacted with
+/// </summary>
 
 public class ThoughtInteractable : MonoBehaviour, InteractableInterface
 {
-    //days of the week
+    /// <summary>
+    /// days of the week
+    /// </summary>
     public enum StoryDay
     {
         Monday = 1,
@@ -15,7 +19,9 @@ public class ThoughtInteractable : MonoBehaviour, InteractableInterface
         Friday = 5
     }
 
-    //store thoughts for specific days
+    /// <summary>
+    /// store thoughts for specific days
+    /// </summary>
     [System.Serializable]
     public class DailyThought
     {
@@ -33,16 +39,18 @@ public class ThoughtInteractable : MonoBehaviour, InteractableInterface
     public DailyThought[] thoughts;
     public float displayDuration = 4f;
 
-    //track which day each object was examined
+    /// <summary>
+    /// track which day each object was examined
+    /// </summary>
     private static Dictionary<string, int> examinedObjects = new Dictionary<string, int>();
 
-    //prompt when looking at object
+    ///prompt when looking at object
     public string Prompt => "Look closely";
 
-    //ensure there is a thought assigned before allowing interaction and it has not already been interacted with this day
+    ///ensure there is a thought assigned before allowing interaction and it has not already been interacted with this day
     public bool CanInteract => !string.IsNullOrEmpty(thoughtID) && GetThoughtForToday() != null && !ExaminedToday();
 
-    //interact to display thought for the day
+    ///interact to display thought for the day
     public void Interact()
     {
         string thought = GetThoughtForToday();
@@ -51,7 +59,7 @@ public class ThoughtInteractable : MonoBehaviour, InteractableInterface
             return;
         }
 
-        //mark object as examined for current day
+        ///mark object as examined for current day
         examinedObjects[thoughtID] = DayManager.CurrentDay;
 
         if (thought != null && ThoughtUI.Instance != null)
@@ -60,7 +68,7 @@ public class ThoughtInteractable : MonoBehaviour, InteractableInterface
         }
     }
 
-    //get current day thought if not null
+    ///get current day thought if not null
     string GetThoughtForToday()
     {
         foreach (DailyThought entry in thoughts)
@@ -74,11 +82,11 @@ public class ThoughtInteractable : MonoBehaviour, InteractableInterface
             }
         }
 
-        //no thought assigned for that day
+        ///no thought assigned for that day
         return null;
     }
 
-    //check if object has been examined today
+    ///check if object has been examined today
     bool ExaminedToday()
     {
         if (string.IsNullOrEmpty(thoughtID))
@@ -89,7 +97,7 @@ public class ThoughtInteractable : MonoBehaviour, InteractableInterface
         return examinedObjects.TryGetValue(thoughtID, out int examinedDay) && examinedDay == DayManager.CurrentDay;
     }
 
-    //clear the thought history when starting a new week
+    ///clear the thought history when starting a new week
     public static void ResetThoughtHistory()
     {
         examinedObjects.Clear();

@@ -3,72 +3,76 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
-//controls display of inner thought dialogue
+/// <summary>
+/// controls display of inner thought dialogue
+/// </summary>
 
 public class ThoughtUI : MonoBehaviour
 {   
-    //allows other scripts to access the ThoughtUI
+    /// <summary>
+    /// allows other scripts to access the ThoughtUI
+    /// </summary>
     public static ThoughtUI Instance { get; private set; }
 
     [Header("UI References")]
 
-    //Canvas cointaining the thought UI
+    ///Canvas cointaining the thought UI
     public Canvas thoughtCanvas;
 
-    //controls the transparency of the thought panel
+    ///controls the transparency of the thought panel
     public CanvasGroup thoughtPanel;
 
-    //text component that displays the thought message
+    ///text component that displays the thought message
     public Text thoughtText;
 
-    //access the players camera that will zoom in on the thought
+    ///access the players camera that will zoom in on the thought
     public Camera playerCamera;
 
-    //fadeDuration is the time it takes for the thought fade in and out, displayyDuration is the time setting for displaying thoughts
+    ///fadeDuration is the time it takes for the thought fade in and out, displayyDuration is the time setting for displaying thoughts
     [Header("Timing")]
     public float fadeDuration = 0.3f;
     public float displayDuration = 4f;
 
-    //controls the camera's zoom effect by reducing the field of view
+    ///controls the camera's zoom effect by reducing the field of view
     [Header("Camera Zoom")]
     public float zoomAmount = 5f;
 
-    //stores the currently running thought coroutine
+    ///stores the currently running thought coroutine
     private Coroutine displayRoutine;
-    //stores the camera's original field of view
+    ///stores the camera's original field of view
     private float originalFOV;
 
-    //checks if a thought is currently displaying 
+    ///checks if a thought is currently displaying 
     public bool IsShowing { get; private set; }
 
 
 
     void Awake()
-    {   //set this object as the ThoughtUI instance
+    {   ///set this object as the ThoughtUI instance
         Instance = this;
 
-        //save the camera's original field of view
+        ///save the camera's original field of view
         originalFOV = playerCamera.fieldOfView;
 
-        //hide UI when scene starts
+        ///hide UI when scene starts
         thoughtPanel.alpha = 0f;
         thoughtCanvas.gameObject.SetActive(false);
     }
 
-    //display thought
+    ///display thought
     public void ShowThought(string message, float duration)
     {
-        //stop previous thought if one is displaying
+        ///stop previous thought if one is displaying
         if (displayRoutine != null)
         {
             StopCoroutine(displayRoutine);
         }
 
-        //start the coroutine that displays the new thought
+        ///start the coroutine that displays the new thought
         displayRoutine = StartCoroutine(DisplayThought(message, duration));
     }
 
-    //handles displaying, fading and hiding thoughts
+    ///handles displaying, fading and hiding thoughts
     IEnumerator DisplayThought(string message, float duration)
     {
         IsShowing = true;
@@ -79,7 +83,7 @@ public class ThoughtUI : MonoBehaviour
 
         float zoomedFOV = originalFOV - zoomAmount;
 
-        //fade in
+        ///fade in
         float timer = 0f;
 
         while (timer < fadeDuration)
@@ -97,7 +101,7 @@ public class ThoughtUI : MonoBehaviour
         thoughtPanel.alpha = 1f;
         playerCamera.fieldOfView = zoomedFOV;
 
-        //display thought until duration or E is pressed
+        ///display thought until duration or E is pressed
         timer = 0f;
 
         while (timer < duration)
@@ -109,7 +113,7 @@ public class ThoughtUI : MonoBehaviour
             yield return null;
         }
 
-        //fade out and restore camera zoom
+        ///fade out and restore camera zoom
 
         while (timer < fadeDuration)
         {
@@ -123,7 +127,7 @@ public class ThoughtUI : MonoBehaviour
             yield return null;
         }
 
-        //Rest UI and active state
+        ///Rest UI and active state
         thoughtPanel.alpha = 0f;
         playerCamera.fieldOfView = originalFOV;
         thoughtCanvas.gameObject.SetActive(false);

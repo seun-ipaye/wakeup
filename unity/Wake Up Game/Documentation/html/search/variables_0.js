@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gameminutes_0',['gameMinutes',['../class_game_clock.html#a10d8ec602b994c816f54fd4d4bfcd3bc',1,'GameClock']]]
+  ['busy_0',['Busy',['../class_sleep_fader.html#a2233ce932e054e5813b6241fd67cf957',1,'SleepFader']]]
 ];

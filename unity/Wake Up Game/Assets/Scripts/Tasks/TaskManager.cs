@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-//represents a morning task, including its name and required steps
-//completed steps, display order on the HUD
+/// <summary>
+/// represents a morning task, including its name and required steps
+/// completed steps, display order on the HUD
+/// </summary>
+
 public class MorningTask
 {
     public string Name;            
@@ -11,7 +14,9 @@ public class MorningTask
     public int Steps;            
     public int HudOrder;
 
-    //returns true when all required steps for this task are completed
+    /// <summary>
+    /// returns true when all required steps for this task are completed
+    /// </summary>
     public bool IsComplete => Steps >= StepsRequired;
 }
 
@@ -20,7 +25,7 @@ public class TaskManager : MonoBehaviour
     public static TaskManager Instance { get; private set; }
 
     [Serializable]
-    //allows specific days to have different tasks instead of all available tasks
+    ///allows specific days to have different tasks instead of all available tasks
     public class DayOverride
     {   
         [Min(1)] public int day = 1;
@@ -33,25 +38,33 @@ public class TaskManager : MonoBehaviour
 
     [Tooltip("K_r in the GDD: tasks needed before going to work. 0 = all of them")]
 
-    //Number os tasks required before the player can go to work, 0 means all of today's task must be completed
+    ///Number of tasks required before the player can go to work, 0 means all of today's task must be completed
     [Min(0)] public int tasksRequired = 0;
 
-    //Read only list of tasks assigned to the current day
+    /// <summary>
+    /// Read only list of tasks assigned to the current day
+    /// </summary>
     public IReadOnlyList<MorningTask> Today => today;
     private readonly List<MorningTask> today = new List<MorningTask>();
 
-    //Event triggered whenever a task step is completed
+    /// <summary>
+    /// Event triggered whenever a task step is completed
+    /// </summary>
     public event Action<MorningTask> TaskProgressed;
 
-    //Event triggered when an individual task is fully completed
+    /// <summary>
+    /// Event triggered when an individual task is fully completed
+    /// </summary>
     public event Action<MorningTask> TaskCompleted;
-    //Event triggered when all of today's tasks are completed
+    /// <summary>
+    /// Event triggered when all of today's tasks are completed
+    /// </summary>
     public event Action AllTasksCompleted;
 
     void Awake()
     {
         Instance = this;
-        //finds task objects in the scene and counts their required steps
+        ///finds task objects in the scene and counts their required steps
         Dictionary<string, MorningTask> allTasks = FindTasksInScene();
         PickTasksFor(DayManager.CurrentDay, allTasks);
 
@@ -84,7 +97,7 @@ public class TaskManager : MonoBehaviour
         return tasks;
     }
 
-    //Selects tasks for the current day using DayOverride
+    ///Selects tasks for the current day using DayOverride
     void PickTasksFor(int day, Dictionary<string, MorningTask> allTasks)
     {
         today.Clear();
@@ -110,7 +123,7 @@ public class TaskManager : MonoBehaviour
             : string.Compare(a.Name, b.Name, StringComparison.OrdinalIgnoreCase));
     }
 
-    //converts a task name into a consistent key for matching 
+    ///converts a task name into a consistent key for matching 
     public static string Key(string taskName)
     {
         if (string.IsNullOrWhiteSpace(taskName)) return "";
@@ -119,17 +132,17 @@ public class TaskManager : MonoBehaviour
         return string.Join(" ", words);
     }
 
-    //Returns today's task matching the provided task name
+    ///Returns today's task matching the provided task name
     public MorningTask Get(string taskName)
     {
         string key = Key(taskName);
         return today.Find(t => Key(t.Name) == key);
     }
 
-    //Checks whether a task is assigned for today
+    ///Checks whether a task is assigned for today
     public bool IsToday(string taskName) => Get(taskName) != null;
 
-    //Completes one step of the specified task and triggers progression events
+    ///Completes one step of the specified task and triggers progression events
     public void CompleteStep(string taskName)
     {
         MorningTask task = Get(taskName);
@@ -157,13 +170,13 @@ public class TaskManager : MonoBehaviour
         }
     }
 
-    //Returns the number of fully completed tasks today
+    ///Returns the number of fully completed tasks today
     public int CompletedCount => today.FindAll(t => t.IsComplete).Count;
 
-    //Returns true when all tasks assigned for today are complete
+    ///Returns true when all tasks assigned for today are complete
     public bool AllComplete => CompletedCount >= today.Count;
 
-    //Returns true when the require number of tasks has been completed
+    ///Returns true when the require number of tasks has been completed
     public bool RequiredTasksDone
     {
         get

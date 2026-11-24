@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lost_0',['Lost',['../class_day_manager.html#a744b8a082bac15331a9dc426921572f7',1,'DayManager']]]
+  ['daychanged_0',['DayChanged',['../class_day_manager.html#a562acc82fe3c96c56d4981abb9b18330',1,'DayManager']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nextday_0',['NextDay',['../class_day_manager.html#ac0af35302886798e8be3b95d1745b7f6',1,'DayManager']]]
+  ['hideclock_0',['HideClock',['../class_h_u_d_manager.html#a228b0fa936b4538c4c34558e8005c0bd',1,'HUDManager']]]
 ];

@@ -1,13 +1,17 @@
 using UnityEngine;
 
-//control the Tub Monster anomaly
-//Adds a tubmonster behind the showcurtain in the bathroom when activated
+/// <summary>
+/// control the Tub Monster anomaly
+/// Adds a tubmonster behind the showcurtain in the bathroom when activated
+/// </summary>
 
 public class TubMonster : Anomaly
 {
     public GameObject tubMonster;
 
-    //hide when the game starts
+    /// <summary>
+    /// hide when the game starts
+    /// </summary>
     void Awake()
     {
         if (tubMonster != null)
@@ -16,7 +20,9 @@ public class TubMonster : Anomaly
         }
     }
 
-    //when selected, show Tub Monster
+    /// <summary>
+    /// when selected, show Tub Monster
+    /// </summary>
     public override void Activate()
     {
         if (tubMonster != null)
@@ -25,7 +31,7 @@ public class TubMonster : Anomaly
         }
     }
 
-    //when not selected, hide Tub Monster
+    ///when not selected, hide Tub Monster
     public override void Deactivate()
     {
         if (tubMonster != null)

@@ -1,6 +1,8 @@
 using UnityEngine;
+/// <summary>
+/// Move the hands of an anolog clock object based on the current time of the GameClock
+/// </summary>
 
-///move the hands of an anolog clock object based on the current time of the GameClock
 
 public class AnalogClock : MonoBehaviour
 {   
@@ -8,7 +10,7 @@ public class AnalogClock : MonoBehaviour
     public Transform hourHand;
     public Transform minuteHand;
 
-    ///sacis the hands rotate around, depending on model orientation
+    ///a vector that determines how the hands rotate around, depending on model orientation
     public Vector3 rotationAxis = Vector3.forward;
 
     ///When true the clock hands should move backwards (anomaly)

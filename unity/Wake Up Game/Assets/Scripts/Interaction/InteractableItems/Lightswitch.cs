@@ -1,14 +1,20 @@
 using UnityEngine;
 
-// A light switch the player can toggle with E
+/// <summary>
+/// A light switch the player can toggle with E
+/// </summary>
 
 public class LightSwitch : MonoBehaviour, InteractableInterface
 {
     [Header("Lights")]
     [Tooltip("The lights this switch controls")]
-    public Light[] lights;
-    public bool startOn = true;
 
+    ///An array of what lights are controlled by this light switch
+    public Light[] lights;
+    
+    /// Gives option to start with light on or off
+    public bool startOn = true;
+    
     private bool isOn;
 
     public string Prompt => isOn ? "Turn off light" : "Turn on light";

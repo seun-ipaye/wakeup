@@ -111,6 +111,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_h_u_d_ma
   <div class="headertitle"><div class="title">HUDManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the HUD of the player.  
+ <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for HUDManager:</div>
 <div class="dyncontent">
@@ -120,16 +123,54 @@ Inheritance diagram for HUDManager:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a695a7da956268c3742addbecb6e60ca4" id="r_a695a7da956268c3742addbecb6e60ca4"><td class="memItemLeft"><a id="a695a7da956268c3742addbecb6e60ca4" name="a695a7da956268c3742addbecb6e60ca4"></a>
-void&#160;</td><td class="memItemRight"><b>ShowClock</b> ()</td></tr>
-<tr class="memitem:a228b0fa936b4538c4c34558e8005c0bd" id="r_a228b0fa936b4538c4c34558e8005c0bd"><td class="memItemLeft"><a id="a228b0fa936b4538c4c34558e8005c0bd" name="a228b0fa936b4538c4c34558e8005c0bd"></a>
-void&#160;</td><td class="memItemRight"><b>HideClock</b> ()</td></tr>
+<tr class="memitem:a695a7da956268c3742addbecb6e60ca4" id="r_a695a7da956268c3742addbecb6e60ca4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a695a7da956268c3742addbecb6e60ca4">ShowClock</a> ()</td></tr>
+<tr class="memitem:a228b0fa936b4538c4c34558e8005c0bd" id="r_a228b0fa936b4538c4c34558e8005c0bd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a228b0fa936b4538c4c34558e8005c0bd">HideClock</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a37b0650b4f3421544e7870ceaaf19a34" id="r_a37b0650b4f3421544e7870ceaaf19a34"><td class="memItemLeft"><a id="a37b0650b4f3421544e7870ceaaf19a34" name="a37b0650b4f3421544e7870ceaaf19a34"></a>
 static <a class="el" href="class_h_u_d_manager.html">HUDManager</a>&#160;</td><td class="memItemRight"><b>Instance</b><code> [get]</code></td></tr>
+<tr class="memdesc:a37b0650b4f3421544e7870ceaaf19a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Singleton allows other scripts to access <a class="el" href="#a37b0650b4f3421544e7870ceaaf19a34" title="Singleton allows other scripts to access HUDManager.Instance.">HUDManager.Instance</a>. <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the HUD of the player. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a228b0fa936b4538c4c34558e8005c0bd" name="a228b0fa936b4538c4c34558e8005c0bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a228b0fa936b4538c4c34558e8005c0bd">&#9670;&#160;</a></span>HideClock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HUDManager.HideClock </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>hide clock UI when player looks away from clock object Sets ShowClock to false to trigger the fade-out </p>
+
+</div>
+</div>
+<a id="a695a7da956268c3742addbecb6e60ca4" name="a695a7da956268c3742addbecb6e60ca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a695a7da956268c3742addbecb6e60ca4">&#9670;&#160;</a></span>ShowClock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HUDManager.ShowClock </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>show the clock UI when player looks at a clock object sets showClock to trigger the fade-in </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>C:/Users/jessi/Documents/UnityProjects/wakeup/unity/Wake Up Game/Assets/Scripts/UI/<b>HUDManager.cs</b></li>
 </ul>

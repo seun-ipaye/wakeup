@@ -4,10 +4,18 @@ using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
 
+/// <summary>
+/// Manages the HUD of the player 
+/// </summary>
 public class HUDManager : MonoBehaviour
 {
-    public static HUDManager Instance { get; private set; } //Singleton allows other scripts to access HUDManager.Instance
-    //Awake when script is created
+    /// <summary>
+    /// Singleton allows other scripts to access HUDManager.Instance
+    /// </summary>
+    public static HUDManager Instance { get; private set; } 
+    /// <summary>
+    /// Awake when script is created
+    /// </summary>
     [SerializeField] private DayManager dayManager;
 
     [Header("UI Visual Components")]
@@ -15,7 +23,9 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private GameObject ObjectivesList;
     [SerializeField] private TextMeshProUGUI DayText;
 
-    //clock UI
+    /// <summary>
+    /// clock UI
+    /// </summary>
     [Header("Clock UI")]
     [SerializeField] private GameObject ClockPanel;
     [SerializeField] private TextMeshProUGUI ClockTimeText;
@@ -38,7 +48,9 @@ public class HUDManager : MonoBehaviour
 
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    /// <summary>
+    /// Start is called once before the first execution of Update after the MonoBehaviour is created
+    /// </summary>
     void Start()
     {
         updateDay();
@@ -51,32 +63,36 @@ public class HUDManager : MonoBehaviour
             TaskManager.Instance.TaskProgressed -= UpdateObjective;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Update is called once per frame
+    /// </summary>
     void Update() {
 
-        //Updating day of the week
+        ///Updating day of the week
         updateDay();
 
-        //update the clock display
+        ///update the clock display
         UpdateClockUI();
     }
 
-    //show the clock UI when player looks at a clock object
-    //sets showClock to trigger the fade-in
+    ///show the clock UI when player looks at a clock object
+    ///sets showClock to trigger the fade-in
     public void ShowClock()
     {
         showClock = true;
     }
 
-    //hide clock UI when player looks away from clock object
-    //Sets ShowClock to false to trigger the fade-out
+    ///hide clock UI when player looks away from clock object
+    ///Sets ShowClock to false to trigger the fade-out
     public void HideClock()
     {
         showClock = false;
     }
 
-    //gets the current formatted time from the GameClock singleton
-    //and updates the time that is displayed on the clock UI
+    /// <summary>
+    /// gets the current formatted time from the GameClock singleton
+    /// and updates the time that is displayed on the clock UI
+    /// </summary>
     void UpdateClockUI()
     {
         if (ClockPanel.activeSelf && GameClock.Instance != null)
@@ -87,7 +103,9 @@ public class HUDManager : MonoBehaviour
         UpdateClockFade();
     }
 
-    //fade the clock UI in and out when the player looks at a clock object
+    /// <summary>
+    /// fade the clock UI in and out when the player looks at a clock object
+    /// </summary>
     void UpdateClockFade()
     {
         float targetAlpha = showClock ? 1f : 0f;
@@ -125,7 +143,9 @@ public class HUDManager : MonoBehaviour
                 break;
         }
     }
-    //the first text under ObjectivesList is the style template for every task line
+    /// <summary>
+    /// the first text under ObjectivesList is the style template for every task line
+    /// </summary>
     void BuildObjectives()
     {
         if (ObjectivesList == null || TaskManager.Instance == null) return;

@@ -1,9 +1,16 @@
-// Anything the player can press E on implements this
+/// <summary>
+/// Anything the player can press E on implements this
+/// an interface other interactable objects can implement
+/// </summary>
 public interface InteractableInterface
 {
-    // text shown on screen while looking at the object
+    /// <summary>
+    /// text shown on screen while looking at the object
+    /// </summary>
     string Prompt { get; }
-    // called once when the player presses E
+    /// <summary>
+    /// called once when the player presses E
+    /// </summary>
     void Interact();
     bool CanInteract => true;
 }

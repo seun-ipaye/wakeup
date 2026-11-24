@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['maxdays_0',['MaxDays',['../class_day_manager.html#af978cf96ff1dacd93f13b015eeed294c',1,'DayManager']]],
-  ['maxtier_1',['MaxTier',['../class_anomaly_manager.html#a990bda1bad8e5c7a5473a9bba73a6f26',1,'AnomalyManager']]],
-  ['minanomalies_2',['minAnomalies',['../class_story_day_anomalies.html#a0e1aa8cd728b0b0a1f6be501a913e1e0',1,'StoryDayAnomalies']]]
+  ['fadeduration_0',['fadeDuration',['../class_thought_u_i.html#ae985381333b714fd7f84f639d91d8295',1,'ThoughtUI']]],
+  ['fieldofview_1',['fieldOfView',['../class_player_controller.html#afbd31b5b3f2a9196177ebe8f8f281eed',1,'PlayerController']]],
+  ['footstepsounds_2',['footstepSounds',['../class_player_foot_steps.html#ab358e5f7c4aee10d9c77344b072837b1',1,'PlayerFootSteps']]]
 ];
